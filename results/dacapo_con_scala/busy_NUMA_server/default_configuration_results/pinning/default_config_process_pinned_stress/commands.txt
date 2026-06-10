@@ -1,0 +1,9 @@
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./apparat apparat -n 105 -s default --preserve
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./factorie factorie -n 105 -s default --preserve
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./kiama kiama -n 105 -s default --preserve
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./scalac scalac -n 105 -s default --preserve
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./scaladoc scaladoc -n 105 -s default --preserve
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./scalap scalap -n 105 -s default --preserve
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./scalariform scalariform -n 105 -s default --preserve
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./scalaxb scalaxb -n 105 -s default --preserve
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./tmt tmt -n 105 -s default --preserve

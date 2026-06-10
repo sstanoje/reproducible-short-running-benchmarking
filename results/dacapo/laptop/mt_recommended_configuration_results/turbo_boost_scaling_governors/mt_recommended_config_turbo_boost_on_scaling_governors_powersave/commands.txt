@@ -1,0 +1,7 @@
+./fop -Duser.home=/home/strahinja fop -n 105 -s default --preserve -Djava.home=/home/strahinja/Desktop/work/tools/labsjdk-ee-latest-26+9-jvmci-b01_amd64/ -Xms16g -Xmx16g -Xmn8g
+nice -n -20 ./fop -Duser.home=/home/strahinja fop -n 105 -s default --preserve -Djava.home=/home/strahinja/Desktop/work/tools/labsjdk-ee-latest-26+9-jvmci-b01_amd64/ -Xms16g -Xmx16g -Xmn8g
+nice -n -20 ./luindex -Duser.home=/home/strahinja luindex -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation -Xms16g -Xmx16g -Xmn8g
+nice -n -20 ./lusearch -Duser.home=/home/strahinja lusearch -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation -Xms16g -Xmx16g -Xmn8g
+nice -n -20 ./pmd -Duser.home=/home/strahinja pmd -n 105 -s default --preserve --no-validation -Xms16g -Xmx16g -Xmn8g
+nice -n -20 ./sunflow -Duser.home=/home/strahinja sunflow -n 105 -s default -Xms16g -Xmx16g -Xmn8g
+nice -n -20 ./xalan -Duser.home=/home/strahinja xalan -n 105 -s default -Xms16g -Xmx16g -Xmn8g

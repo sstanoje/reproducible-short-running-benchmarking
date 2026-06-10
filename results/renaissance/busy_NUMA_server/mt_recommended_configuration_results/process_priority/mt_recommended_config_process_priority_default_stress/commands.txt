@@ -1,0 +1,14 @@
+numactl --cpunodebind=0 --membind=0 ./akka-uct -r 105 akka-uct -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./dotty -r 105 dotty -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./finagle-http -r 105 finagle-http -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./fj-kmeans -r 105 fj-kmeans -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./future-genetic -r 105 future-genetic -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./mnemonics -r 105 mnemonics -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./par-mnemonics -r 105 par-mnemonics -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./philosophers -r 105 philosophers -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./reactors -r 105 reactors -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./rx-scrabble -r 105 rx-scrabble -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./scala-doku -r 105 scala-doku -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./scala-kmeans -r 105 scala-kmeans -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./scala-stm-bench7 -r 105 scala-stm-bench7 -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./scrabble -r 105 scrabble -Xms16g -Xmx16g -Xmn8g

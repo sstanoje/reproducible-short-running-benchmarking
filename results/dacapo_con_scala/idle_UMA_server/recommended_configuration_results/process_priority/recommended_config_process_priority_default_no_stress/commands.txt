@@ -1,0 +1,9 @@
+taskset -c 3 ./apparat apparat -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g
+taskset -c 3 ./factorie factorie -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g
+taskset -c 3 ./kiama kiama -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g
+taskset -c 3 ./scalac scalac -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g
+taskset -c 3 ./scaladoc scaladoc -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g
+taskset -c 3 ./scalap scalap -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g
+taskset -c 3 ./scalariform scalariform -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g
+taskset -c 3 ./scalaxb scalaxb -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g
+taskset -c 3 ./tmt tmt -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g

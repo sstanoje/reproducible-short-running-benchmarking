@@ -1,0 +1,200 @@
+{
+    "recommended vs default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 88.993,
+                "p": 0.021943664659377984,
+                "significant": "yes",
+                "result": "default faster than recommended by 88.993%"
+            },
+            "busy UMA server": {
+                "effect": 62.284,
+                "p": 0.05553298081594267,
+                "significant": "no",
+                "result": "default faster than recommended by 62.284%"
+            },
+            "laptop": {
+                "effect": 128.568,
+                "p": 0.006318521553682498,
+                "significant": "yes",
+                "result": "default faster than recommended by 128.568%"
+            },
+            "idle NUMA server": {
+                "effect": 22.435,
+                "p": 0.15781136896845493,
+                "significant": "no",
+                "result": "default faster than recommended by 22.435%"
+            },
+            "busy NUMA server": {
+                "effect": 3.29,
+                "p": 0.3626859408352129,
+                "significant": "no",
+                "result": "default faster than recommended by 3.290%"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 825.926,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than recommended by 825.926%"
+            },
+            "busy UMA server": {
+                "effect": 596.864,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than recommended by 596.864%"
+            },
+            "laptop": {
+                "effect": 786.667,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than recommended by 786.667%"
+            },
+            "idle NUMA server": {
+                "effect": 1132.381,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than recommended by 1132.381%"
+            },
+            "busy NUMA server": {
+                "effect": 788.235,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than recommended by 788.235%"
+            }
+        }
+    },
+    "recommended vs mt_recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 74.498,
+                "p": 0.013150364234284668,
+                "significant": "yes",
+                "result": "mt_recommended faster than recommended by 74.498%"
+            },
+            "busy UMA server": {
+                "effect": 59.097,
+                "p": 0.030327342511675306,
+                "significant": "yes",
+                "result": "mt_recommended faster than recommended by 59.097%"
+            },
+            "laptop": {
+                "effect": 86.844,
+                "p": 0.013150364234284668,
+                "significant": "yes",
+                "result": "mt_recommended faster than recommended by 86.844%"
+            },
+            "idle NUMA server": {
+                "effect": 61.672,
+                "p": 0.015653550837455003,
+                "significant": "yes",
+                "result": "mt_recommended faster than recommended by 61.672%"
+            },
+            "busy NUMA server": {
+                "effect": 40.075,
+                "p": 0.03546470751403722,
+                "significant": "yes",
+                "result": "mt_recommended faster than recommended by 40.075%"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 646.269,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "mt_recommended faster than recommended by 646.269%"
+            },
+            "busy UMA server": {
+                "effect": 594.444,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "mt_recommended faster than recommended by 594.444%"
+            },
+            "laptop": {
+                "effect": 641.606,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "mt_recommended faster than recommended by 641.606%"
+            },
+            "idle NUMA server": {
+                "effect": 657.062,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "mt_recommended faster than recommended by 657.062%"
+            },
+            "busy NUMA server": {
+                "effect": 519.324,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "mt_recommended faster than recommended by 519.324%"
+            }
+        }
+    },
+    "mt_recommended vs default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 6.331,
+                "p": 0.9749599188317098,
+                "significant": "no",
+                "result": "default faster than mt_recommended by 6.331%"
+            },
+            "busy UMA server": {
+                "effect": -11.031,
+                "p": 0.09619703646278294,
+                "significant": "no",
+                "result": "mt_recommended faster than default by 11.031%"
+            },
+            "laptop": {
+                "effect": 1.034,
+                "p": 0.6377666989276032,
+                "significant": "no",
+                "result": "default faster than mt_recommended by 1.034%"
+            },
+            "idle NUMA server": {
+                "effect": -14.196,
+                "p": 0.19812291175396723,
+                "significant": "no",
+                "result": "mt_recommended faster than default by 14.196%"
+            },
+            "busy NUMA server": {
+                "effect": -31.22,
+                "p": 0.006318521553682498,
+                "significant": "yes",
+                "result": "mt_recommended faster than default by 31.220%"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 24.242,
+                "p": 0.01775592261403605,
+                "significant": "yes",
+                "result": "default faster than mt_recommended by 24.242%"
+            },
+            "busy UMA server": {
+                "effect": 9.714,
+                "p": 0.027991815485665747,
+                "significant": "yes",
+                "result": "default faster than mt_recommended by 9.714%"
+            },
+            "laptop": {
+                "effect": 18.103,
+                "p": 0.12819017434510785,
+                "significant": "no",
+                "result": "default faster than mt_recommended by 18.103%"
+            },
+            "idle NUMA server": {
+                "effect": 52.941,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than mt_recommended by 52.941%"
+            },
+            "busy NUMA server": {
+                "effect": 39.535,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than mt_recommended by 39.535%"
+            }
+        }
+    }
+}

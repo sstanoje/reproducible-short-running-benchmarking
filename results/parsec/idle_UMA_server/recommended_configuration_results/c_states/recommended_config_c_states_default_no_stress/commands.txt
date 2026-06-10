@@ -1,0 +1,1 @@
+env OMP_NUM_THREADS=1 OMP_PROC_BIND=false GOMP_CPU_AFFINITY=3 taskset -c 3 nice -n -20 ./freqmine kosarak_990k.dat 790

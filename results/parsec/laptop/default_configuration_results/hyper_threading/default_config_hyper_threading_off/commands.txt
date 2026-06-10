@@ -1,0 +1,8 @@
+./blackscholes 8.0 msec in_64K.txt prices.txt
+./bodytrack sequenceB_4 4.0 msec 4.0 msec 4000.0 msec 5.0 msec 0.0 msec 8.0 msec
+./facesim -timing -threads 8.0 msec
+./ferret corel lsh queries 10.0 msec 20.0 msec 8.0 msec output.txt
+./fluidanimate 8.0 msec 5.0 msec in_300K.fluid out.fluid
+env OMP_NUM_THREADS=8 ./freqmine kosarak_990k.dat 790.0 msec
+./swaptions -ns 64.0 msec -sm 40000.0 msec -nt 8.0 msec
+env IM_CONCURRENCY=8 ./vips im_benchmark bigben_2662x5500.v output.v

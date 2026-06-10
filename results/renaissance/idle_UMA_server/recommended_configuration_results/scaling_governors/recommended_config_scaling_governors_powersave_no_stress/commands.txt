@@ -1,0 +1,13 @@
+taskset -c 3 nice -n -20 ./akka-uct -r 105 akka-uct -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./finagle-http -r 105 finagle-http -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./fj-kmeans -r 105 fj-kmeans -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./future-genetic -r 105 future-genetic -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./mnemonics -r 105 mnemonics -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./par-mnemonics -r 105 par-mnemonics -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./philosophers -r 105 philosophers -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./reactors -r 105 reactors -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./rx-scrabble -r 105 rx-scrabble -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./scala-doku -r 105 scala-doku -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./scala-kmeans -r 105 scala-kmeans -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./scala-stm-bench7 -r 105 scala-stm-bench7 -Xms16g -Xmn16g -Xmn8g
+taskset -c 3 nice -n -20 ./scrabble -r 105 scrabble -Xms16g -Xmn16g -Xmn8g

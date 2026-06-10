@@ -1,0 +1,6 @@
+./fop -Duser.home=/root fop -n 105 -s default --preserve -Djava.home=/root/tools/labsjdk-ee-latest-26+9-jvmci-b01_amd64/
+./luindex -Duser.home=/root luindex -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation
+./lusearch -Duser.home=/root lusearch -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation
+./pmd -Duser.home=/root pmd -n 105 -s default --preserve --no-validation
+./sunflow -Duser.home=/root sunflow -n 105 -s default
+./xalan -Duser.home=/root xalan -n 105 -s default

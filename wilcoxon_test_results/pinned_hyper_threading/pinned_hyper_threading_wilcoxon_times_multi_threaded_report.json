@@ -1,0 +1,68 @@
+{
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -31.839,
+                "p": 0.03400102540139365,
+                "significant": "yes",
+                "result": "default faster than D+Pinned-HThreading by 31.839%"
+            },
+            "busy UMA server": {
+                "effect": -24.402,
+                "p": 0.23432097173768163,
+                "significant": "no",
+                "result": "default faster than D+Pinned-HThreading by 24.402%"
+            },
+            "laptop": {
+                "effect": -27.24,
+                "p": 0.06267138786896245,
+                "significant": "no",
+                "result": "default faster than D+Pinned-HThreading by 27.240%"
+            },
+            "idle NUMA server": {
+                "effect": -19.136,
+                "p": 0.3010541816225988,
+                "significant": "no",
+                "result": "default faster than D+Pinned-HThreading by 19.136%"
+            },
+            "busy NUMA server": {
+                "effect": 0.776,
+                "p": 0.9176315934670087,
+                "significant": "no",
+                "result": "D+Pinned-HThreading faster than default by 0.776%"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": -85.445,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than D+Pinned-HThreading by 85.445%"
+            },
+            "busy UMA server": {
+                "effect": -81.696,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than D+Pinned-HThreading by 81.696%"
+            },
+            "laptop": {
+                "effect": -81.224,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than D+Pinned-HThreading by 81.224%"
+            },
+            "idle NUMA server": {
+                "effect": -89.198,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than D+Pinned-HThreading by 89.198%"
+            },
+            "busy NUMA server": {
+                "effect": -85.961,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than D+Pinned-HThreading by 85.961%"
+            }
+        }
+    }
+}

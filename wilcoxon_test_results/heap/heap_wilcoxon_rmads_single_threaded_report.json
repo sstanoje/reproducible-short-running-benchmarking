@@ -1,0 +1,72 @@
+{
+    "recommended vs modified recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -0.134,
+                "p": 0.004439092656792155,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-FixedHeap by 0.134 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.278,
+                "p": 0.0033456181158508813,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-FixedHeap by 0.278 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.409,
+                "p": 0.032854219928643694,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-FixedHeap by 0.409 pp"
+            },
+            "busy NUMA server": {
+                "effect": -0.441,
+                "p": 0.012792160247732852,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-FixedHeap by 0.441 pp"
+            },
+            "laptop": {
+                "effect": -0.455,
+                "p": 0.016368539230025455,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-FixedHeap by 0.455 pp"
+            }
+        },
+        "unmanaged languages": {}
+    },
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 0.016,
+                "p": 0.15485982528200376,
+                "significant": "no",
+                "result": "D+FixedHeap lower RMAD than default by 0.016 pp"
+            },
+            "busy UMA server": {
+                "effect": 1.774,
+                "p": 0.009925485845323257,
+                "significant": "yes",
+                "result": "D+FixedHeap lower RMAD than default by 1.774 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.132,
+                "p": 0.15793931050013033,
+                "significant": "no",
+                "result": "D+FixedHeap lower RMAD than default by 0.132 pp"
+            },
+            "busy NUMA server": {
+                "effect": 1.055,
+                "p": 0.15793931050013033,
+                "significant": "no",
+                "result": "D+FixedHeap lower RMAD than default by 1.055 pp"
+            },
+            "laptop": {
+                "effect": 0.409,
+                "p": 0.03665792867221451,
+                "significant": "yes",
+                "result": "D+FixedHeap lower RMAD than default by 0.409 pp"
+            }
+        },
+        "unmanaged languages": {}
+    }
+}

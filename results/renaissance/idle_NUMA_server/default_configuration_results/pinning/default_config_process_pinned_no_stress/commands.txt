@@ -1,0 +1,14 @@
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./akka-uct -r 105 akka-uct
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./dotty -r 105 dotty
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./finagle-http -r 105 finagle-http
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./fj-kmeans -r 105 fj-kmeans
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./future-genetic -r 105 future-genetic
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./mnemonics -r 105 mnemonics
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./par-mnemonics -r 105 par-mnemonics
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./philosophers -r 105 philosophers
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./reactors -r 105 reactors
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./rx-scrabble -r 105 rx-scrabble
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./scala-doku -r 105 scala-doku
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./scala-kmeans -r 105 scala-kmeans
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./scala-stm-bench7 -r 105 scala-stm-bench7
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./scrabble -r 105 scrabble

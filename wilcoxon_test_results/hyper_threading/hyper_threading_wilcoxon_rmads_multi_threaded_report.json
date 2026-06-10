@@ -1,0 +1,138 @@
+{
+    "recommended vs modified recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 0.023,
+                "p": 0.43796657516602056,
+                "significant": "no",
+                "result": "R+HTreading lower RMAD than recommended by 0.023 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.962,
+                "p": 0.0013462033496218731,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+HTreading by 0.962 pp"
+            },
+            "laptop": {
+                "effect": 0.0,
+                "p": 0.836138661741041,
+                "significant": "no",
+                "result": "R+HTreading lower RMAD than recommended by 0.000 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.037,
+                "p": 0.1476602555616499,
+                "significant": "no",
+                "result": "recommended lower RMAD than R+HTreading by 0.037 pp"
+            },
+            "busy NUMA server": {
+                "effect": -0.587,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+HTreading by 0.587 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 0.0,
+                "p": 0.10880943004054568,
+                "significant": "no",
+                "result": "R+HTreading lower RMAD than recommended by 0.000 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.486,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+HTreading by 0.486 pp"
+            },
+            "laptop": {
+                "effect": 0.0,
+                "p": 0.28504940740261275,
+                "significant": "no",
+                "result": "R+HTreading lower RMAD than recommended by 0.000 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.0,
+                "p": 0.4652088184521418,
+                "significant": "no",
+                "result": "R+HTreading lower RMAD than recommended by 0.000 pp"
+            },
+            "busy NUMA server": {
+                "effect": -1.97,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+HTreading by 1.970 pp"
+            }
+        }
+    },
+    "mt_recommended vs modified mt_recommended": {
+        "managed languages": {},
+        "unmanaged languages": {}
+    },
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -0.067,
+                "p": 0.836138661741041,
+                "significant": "no",
+                "result": "default lower RMAD than D-HTreading by 0.067 pp"
+            },
+            "busy UMA server": {
+                "effect": -2.179,
+                "p": 0.004455352355471741,
+                "significant": "yes",
+                "result": "default lower RMAD than D-HTreading by 2.179 pp"
+            },
+            "laptop": {
+                "effect": 0.65,
+                "p": 0.08793560714236243,
+                "significant": "no",
+                "result": "D-HTreading lower RMAD than default by 0.650 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.423,
+                "p": 0.13372989286451814,
+                "significant": "no",
+                "result": "D-HTreading lower RMAD than default by 0.423 pp"
+            },
+            "busy NUMA server": {
+                "effect": -0.048,
+                "p": 0.7173808884143212,
+                "significant": "no",
+                "result": "default lower RMAD than D-HTreading by 0.048 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 0.0,
+                "p": 0.14412703481601533,
+                "significant": "no",
+                "result": "D-HTreading lower RMAD than default by 0.000 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.108,
+                "p": 0.3454475304692257,
+                "significant": "no",
+                "result": "default lower RMAD than D-HTreading by 0.108 pp"
+            },
+            "laptop": {
+                "effect": 0.297,
+                "p": 0.463071015014588,
+                "significant": "no",
+                "result": "D-HTreading lower RMAD than default by 0.297 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.0,
+                "p": 0.6858304344516057,
+                "significant": "no",
+                "result": "D-HTreading lower RMAD than default by 0.000 pp"
+            },
+            "busy NUMA server": {
+                "effect": -0.611,
+                "p": 0.17629637444051116,
+                "significant": "no",
+                "result": "default lower RMAD than D-HTreading by 0.611 pp"
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+nice -n -20.0 msec ./blackscholes 16.0 msec in_64K.txt prices.txt
+nice -n -20.0 msec ./bodytrack sequenceB_4 4.0 msec 4.0 msec 4000.0 msec 5.0 msec 0.0 msec 16.0 msec
+nice -n -20.0 msec ./blackscholes 16.0 msec in_64K.txt prices.txt
+nice -n -20.0 msec ./blackscholes 16.0 msec in_64K.txt prices.txt
+nice -n -20.0 msec ./bodytrack sequenceB_4 4.0 msec 4.0 msec 4000.0 msec 5.0 msec 0.0 msec 16.0 msec
+nice -n -20.0 msec ./facesim -timing -threads 16.0 msec
+nice -n -20.0 msec ./ferret corel lsh queries 10.0 msec 20.0 msec 16.0 msec output.txt
+nice -n -20.0 msec ./fluidanimate 16.0 msec 5.0 msec in_300K.fluid out.fluid
+env OMP_NUM_THREADS=16 nice -n -20.0 msec ./freqmine kosarak_990k.dat 790.0 msec
+nice -n -20.0 msec ./swaptions -ns 64.0 msec -sm 40000.0 msec -nt 16.0 msec
+env IM_CONCURRENCY=16 nice -n -20.0 msec ./vips im_benchmark bigben_2662x5500.v output.v

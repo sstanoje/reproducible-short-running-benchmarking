@@ -1,0 +1,107 @@
+{
+    "recommended vs modified recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -0.125,
+                "p": 0.029873144019229032,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-FixedHeap by 0.125 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.141,
+                "p": 0.022894784183124583,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-FixedHeap by 0.141 pp"
+            },
+            "laptop": {
+                "effect": -0.134,
+                "p": 0.022894784183124583,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-FixedHeap by 0.134 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.2,
+                "p": 0.011285575373529618,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-FixedHeap by 0.200 pp"
+            },
+            "busy NUMA server": {
+                "effect": -0.318,
+                "p": 0.01306396083306817,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-FixedHeap by 0.318 pp"
+            }
+        },
+        "unmanaged languages": {}
+    },
+    "mt_recommended vs modified mt_recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -0.12,
+                "p": 0.09798930270791739,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than MTR-FixedHeap by 0.120 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.329,
+                "p": 0.32587002429697964,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than MTR-FixedHeap by 0.329 pp"
+            },
+            "laptop": {
+                "effect": 0.033,
+                "p": 0.9587607499379828,
+                "significant": "no",
+                "result": "MTR-FixedHeap lower RMAD than mt_recommended by 0.033 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.209,
+                "p": 0.1208386531141816,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than MTR-FixedHeap by 0.209 pp"
+            },
+            "busy NUMA server": {
+                "effect": -0.086,
+                "p": 0.8767217432348915,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than MTR-FixedHeap by 0.086 pp"
+            }
+        },
+        "unmanaged languages": {}
+    },
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 0.115,
+                "p": 0.43796657516602056,
+                "significant": "no",
+                "result": "D+FixedHeap lower RMAD than default by 0.115 pp"
+            },
+            "busy UMA server": {
+                "effect": 0.816,
+                "p": 0.17881002646274535,
+                "significant": "no",
+                "result": "D+FixedHeap lower RMAD than default by 0.816 pp"
+            },
+            "laptop": {
+                "effect": 0.534,
+                "p": 0.1476602555616499,
+                "significant": "no",
+                "result": "D+FixedHeap lower RMAD than default by 0.534 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.011,
+                "p": 0.6050949464540121,
+                "significant": "no",
+                "result": "default lower RMAD than D+FixedHeap by 0.011 pp"
+            },
+            "busy NUMA server": {
+                "effect": 0.722,
+                "p": 0.3010541816225988,
+                "significant": "no",
+                "result": "D+FixedHeap lower RMAD than default by 0.722 pp"
+            }
+        },
+        "unmanaged languages": {}
+    }
+}

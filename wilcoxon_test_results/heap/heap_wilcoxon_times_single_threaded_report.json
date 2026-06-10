@@ -1,0 +1,72 @@
+{
+    "recommended vs modified recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -1.602,
+                "p": 0.004439092656792155,
+                "significant": "yes",
+                "result": "recommended faster than R-FixedHeap by 1.602%"
+            },
+            "busy UMA server": {
+                "effect": -3.453,
+                "p": 0.0033456181158508813,
+                "significant": "yes",
+                "result": "recommended faster than R-FixedHeap by 3.453%"
+            },
+            "idle NUMA server": {
+                "effect": -3.279,
+                "p": 0.007645761692991623,
+                "significant": "yes",
+                "result": "recommended faster than R-FixedHeap by 3.279%"
+            },
+            "busy NUMA server": {
+                "effect": -3.36,
+                "p": 0.007645761692991623,
+                "significant": "yes",
+                "result": "recommended faster than R-FixedHeap by 3.360%"
+            },
+            "laptop": {
+                "effect": -2.898,
+                "p": 0.005847075797320481,
+                "significant": "yes",
+                "result": "recommended faster than R-FixedHeap by 2.898%"
+            }
+        },
+        "unmanaged languages": {}
+    },
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 3.448,
+                "p": 0.016368539230025455,
+                "significant": "yes",
+                "result": "D+FixedHeap faster than default by 3.448%"
+            },
+            "busy UMA server": {
+                "effect": 4.388,
+                "p": 0.016368539230025455,
+                "significant": "yes",
+                "result": "D+FixedHeap faster than default by 4.388%"
+            },
+            "idle NUMA server": {
+                "effect": 5.094,
+                "p": 0.007645761692991623,
+                "significant": "yes",
+                "result": "D+FixedHeap faster than default by 5.094%"
+            },
+            "busy NUMA server": {
+                "effect": 4.271,
+                "p": 0.005847075797320481,
+                "significant": "yes",
+                "result": "D+FixedHeap faster than default by 4.271%"
+            },
+            "laptop": {
+                "effect": 2.883,
+                "p": 0.04986020375690694,
+                "significant": "yes",
+                "result": "D+FixedHeap faster than default by 2.883%"
+            }
+        },
+        "unmanaged languages": {}
+    }
+}
