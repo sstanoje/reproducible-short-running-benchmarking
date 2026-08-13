@@ -14,6 +14,9 @@ ITERATIONS=$2
 RESULT_DIR=$3
 ADDITIONAL_COMMAND=""
 THREADS="$(grep -c processor /proc/cpuinfo)"
+STRESS="no_stress"
+STRESS_PID=""
+STRESS_SCRIPT="$SCRIPT_DIR/../run_stress_random.sh"
 
 show_help() {
     echo "Usage: sudo ./run_benchmarks.sh <executables_directory> <iterations> <results_directory> [OPTIONS]"
@@ -22,6 +25,8 @@ show_help() {
     echo "                         d, default:          Default benchmark execution"
     echo "                         r, recommended:      Recommended benchmark execution"
     echo "                         mtr, mt_recommended: Multi-threaded recommended benchmark execution"
+    echo "  -s, --stress [stress|no_stress]"
+    echo "                       Enable or disable background stress (default: no_stress)"
     echo "  -c, --core [num]     Specify core for 'r' mode (default: 3)"
     echo "  -h, --help           Show this help"
 }
@@ -45,6 +50,14 @@ while [[ "$#" -gt 0 ]]; do
                 *) echo "Invalid mode. Use d/default, r/recommended, or mtr/mt_recommended."; exit 1 ;;
             esac
             shift ;;
+        -s|--stress)
+            case $2 in
+                stress)     STRESS="stress" ;;
+                no_stress)  STRESS="no_stress" ;;
+                *) echo "Invalid stress option. Use stress or no_stress."; exit 1 ;;
+            esac
+            shift
+            ;;
         -c|--core) ISOLATED_CORE="$2"; shift ;;
         -h|--help) show_help; exit 0 ;;
         *) echo "Unknown parameter: $1"; exit 1 ;;
@@ -150,6 +163,11 @@ print_configuration() {
         ordered_keys+=("$key_stored")
     done < <("$SETUP_SCRIPTS_DIR/print_system_setup.sh")
 
+    manual_key="Stress"
+    manual_value=${STRESS//_/ }
+    data_map["$manual_key"]="$manual_value"
+    ordered_keys+=("$manual_key")
+
     json="{"
     first=1
     for k in "${ordered_keys[@]}"; do
@@ -178,6 +196,17 @@ mkdir -p "$RESULT_DIR"
 cd "$EXECUTABLES_DIR" || exit 1
 print_configuration
 : > "$RESULT_DIR/run_commands.txt"
+
+# Start stress if needed to simulate busy environment
+if [[ "$STRESS" == "stress" ]]; then
+    if [[ ! -x "$STRESS_SCRIPT" ]]; then
+        echo "Stress script does not exist or is not executable: $STRESS_SCRIPT"
+        exit 1
+    fi
+
+    "$STRESS_SCRIPT" > /dev/null 2>&1 &
+    STRESS_PID=$!
+fi
 
 # --- Main Benchmark Loop ---
 for file in *; do
@@ -219,6 +248,11 @@ for file in *; do
         cleanup_inputs
     fi
 done
+
+if [[ "$STRESS" == "stress" && -n "$STRESS_PID" ]]; then
+    kill "$STRESS_PID" 2>/dev/null || true
+    wait "$STRESS_PID" 2>/dev/null || true
+fi
 
 # --- Cleanup and Packaging ---
 RESULT_PARENT=$(dirname "$RESULT_DIR")

@@ -10,7 +10,7 @@ The repository provides system configuration scripts, benchmark execution script
 
 The repository is organized as follows:
 
-- `setup_system_scripts/` — scripts used to configure the system for the evaluated benchmarking configurations.
+- `setup_system_scripts/` — scripts used to configure the system for the evaluated benchmarking configurations and to generate the background stress workload used in the busy-server experiments.
 - `run_benchmarks_scripts/` — scripts used to execute the benchmarks and collect execution-time measurements.
 - `results/` — experimental results collected during the evaluation.
 - `wilcoxon_test_results/` — results of the Wilcoxon statistical tests reported in the paper.
@@ -26,6 +26,8 @@ The scripts rely on standard Linux utilities together with:
 - `taskset`
 - `jq`
 - `zip`
+- `unzip`
+- `stress`
 - `rsync`
 - GNU `time`
 
@@ -119,8 +121,11 @@ The commonly supported options are:
 
 - `-m, --mode` — selects the benchmarking configuration.
 - `-c, --core` — selects the isolated CPU core for the R configuration. If omitted, core `3` is used.
+- `-s, --stress` — selects whether the benchmark is executed with the background stress workload. Supported values are `stress` and `no_stress`. If omitted, `no_stress` is used.
 
 The available modes are `d` for the Default configuration, `r` for the Recommended configuration, and, for benchmark suites supporting multi-threaded execution, `mtr` for the Multi-Threaded Recommended configuration.
+
+The background stress workload is intended for reproducing the busy-server experiments. It is implemented by `setup_system_scripts/run_stress_random.sh` and alternates between 2 seconds of background CPU load and 2 seconds without additional load. The selected stress mode is recorded in `config.json`. Background stress was applied only in the server experiments. No additional synthetic stress workload was used on the laptop because it was evaluated under its existing background system load.
 
 After successful execution, the results directory is packaged into `<results_directory>.zip`. The archive contains the benchmark measurements, `config.json`, and `run_commands.txt`.
 
@@ -139,6 +144,11 @@ Recommended configuration using isolated core `3`:
 sudo ./run_benchmarks.sh /path/to/executables 105 results_recommended -m r -c 3
 ```
 
+Recommended configuration with the background stress workload:
+
+```
+sudo ./run_benchmarks.sh /path/to/executables 105 results_recommended_busy -m r -c 3 -s stress
+```
 
 Multi-Threaded Recommended configuration, for suites supporting multi-threaded execution:
 
@@ -159,7 +169,7 @@ These paths are intentionally not inferred automatically because they depend on 
 
 ### PARSEC
 
-The PARSEC runner uses additional benchmark input files provided in `helper_files.zip` alongside the execution script. These files correspond to the PARSEC `3.0` version used in the experiments reported in the paper. The archive contains the benchmark-specific inputs required by the runner.
+The PARSEC runner uses additional benchmark input files provided as benchmark-specific archives in the `helper_files/` directory alongside the execution script. These files correspond to PARSEC `3.0`, the version used in the experiments reported in the paper.
 
 ## Experimental Results
 
@@ -179,7 +189,7 @@ Within each benchmark suite, results are organized by evaluation environment:
 - `busy_NUMA_server/`
 - `laptop/`
 
-For each environment, results are further divided according to the evaluated benchmarking configuration:
+Depending on the benchmark suite, results are further divided according to the applicable benchmarking configurations:
 
 - `default_configuration_results/`
 - `recommended_configuration_results/`
@@ -187,7 +197,7 @@ For each environment, results are further divided according to the evaluated ben
 
 Within these directories, `base/` contains measurements for the corresponding complete configuration, while the remaining directories contain measurements obtained when evaluating individual system settings or selected combinations of settings.
 
-Each individual experiment contains execution-time measurements for the corresponding benchmarks together with a `config.json` file describing the system configuration and a `commands.txt` file containing the executed benchmark commands.
+Each individual experiment contains execution-time measurements for the corresponding benchmarks together with a `config.json` file describing the system configuration and a `run_commands.txt` file containing the executed benchmark commands.
 
 ## Statistical Analysis
 
