@@ -1,33 +1,37 @@
 #!/bin/bash
 
 # --- Path Configuration ---
-# Update this variable to the directory containing your helper scripts
-SCRIPTS_PATH="/home/strahinja/Desktop/scripts"
+# Resolve the helper-script directory relative to this script inside the repo hierarchy
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+SETUP_SCRIPTS_DIR="$SCRIPT_DIR/../../setup_system_scripts"
 
 # Default values
 MODE="default"
 ISOLATED_CORE=3
-ITERATIONS=$1
-RESULT_DIR=$2
+START_DIR=$(pwd)
+EXECUTABLES_DIR=$1
+ITERATIONS=$2
+RESULT_DIR=$3
 ADDITIONAL_COMMAND=""
 
 show_help() {
-    echo "Usage: sudo ./run_benchmarks.sh [iterations] [results_directory] [OPTIONS]"
+    echo "Usage: sudo ./run_benchmarks.sh <executables_directory> <iterations> <results_directory> [OPTIONS]"
     echo "Options:"
-    echo "  -m, --mode [d|r]     Select run mode:"
-    echo "                         d, default:        No tuning, no pinning"
-    echo "                         r, recommended:    Full tuning (HT off, Isolated Core, C-States off)"
+    echo "  -m, --mode [d|r] Select run mode:"
+    echo "                         d, default:          Default benchmark execution"
+    echo "                         r, recommended:      Recommended benchmark execution"
     echo "  -c, --core [num]     Specify core for 'r' mode (default: 3)"
     echo "  -h, --help           Show this help"
 }
 
 # --- Check Arguments ---
-if [ $# -lt 2 ]; then
+if [ $# -lt 3 ]; then
     show_help
     exit 1
 fi
 
-shift 2 # Move past iterations and directory
+# Move past executables_directory, iterations, and results_directory
+shift 3
 
 while [[ "$#" -gt 0 ]]; do
     case $1 in
@@ -45,11 +49,14 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done
 
+if [[ "$RESULT_DIR" != /* ]]; then
+    RESULT_DIR="$START_DIR/$RESULT_DIR"
+fi
+
 # --- Configuration Logic ---
 case "$MODE" in
     "recommended")
         echo "Mode: RECOMMENDED"
-        sudo "$SCRIPTS_PATH/setup_system.sh"
         ADDITIONAL_COMMAND="numactl --cpunodebind=0 --membind=0 taskset -c $ISOLATED_CORE nice -n -20"
         ;;
     "default")
@@ -62,12 +69,12 @@ print_configuration() {
     declare -A data_map
     ordered_keys=()
     while IFS=':' read -r key value; do
-        key=$(echo "$key" | xargs);
+        key=$(echo "$key" | xargs)
         value=$(echo "$value" | xargs)
         key_stored=${key// /_}
         data_map["$key_stored"]="$value"
         ordered_keys+=("$key_stored")
-    done < <("$SCRIPTS_PATH/print_system_setup.sh")
+    done < <("$SETUP_SCRIPTS_DIR/print_system_setup.sh")
 
     json="{"
     first=1
@@ -80,25 +87,37 @@ print_configuration() {
         first=0
     done
     json="$json}"
-    echo -e "$json" | jq . > config.json
+    echo -e "$json" | jq . > "$RESULT_DIR/config.json"
 }
 
+if [[ ! -d "$EXECUTABLES_DIR" ]]; then
+    echo "Executables directory does not exist: $EXECUTABLES_DIR"
+    exit 1
+fi
+
+if [[ -e "$RESULT_DIR" || -e "${RESULT_DIR}.zip" ]]; then
+    echo "Result path already exists: $RESULT_DIR or ${RESULT_DIR}.zip"
+    exit 1
+fi
+mkdir -p "$RESULT_DIR"
+
+cd "$EXECUTABLES_DIR" || exit 1
 print_configuration
-touch run_commands.txt
+: > "$RESULT_DIR/run_commands.txt"
 
 # --- Main Benchmark Loop ---
 for file in *; do
     # Only run if it's a file AND has the executable bit set
     if [[ -f "$file" && -x "$file" ]]; then
 
-        # Memory cleanup for recommended modes
+        # Memory cleanup for recommended mode
         if [[ "$MODE" != "default" ]]; then
             echo "3" | sudo tee /proc/sys/vm/drop_caches > /dev/null
             sync
         fi
 
         echo "Starting ${file}..."
-        output_file="${file}.txt"
+        output_file="$RESULT_DIR/${file}.txt"
 
         # Execute iterations
         for i in $(seq 1 "$ITERATIONS"); do
@@ -126,18 +145,20 @@ for file in *; do
             mv "$tmp_file" "$output_file"
         fi
 
-        echo "$ADDITIONAL_COMMAND ./"$file"" >> run_commands.txt
+        echo "$ADDITIONAL_COMMAND ./$file" >> "$RESULT_DIR/run_commands.txt"
     fi
 done
 
-# Cleanup and Packaging
-mkdir -p "../$RESULT_DIR"
-mv *.txt "../$RESULT_DIR/"
-mv config.json "../$RESULT_DIR/"
-mv run_commands.txt "../$RESULT_DIR/"
+# --- Cleanup and Packaging ---
+RESULT_PARENT=$(dirname "$RESULT_DIR")
+RESULT_NAME=$(basename "$RESULT_DIR")
 
-cd ..
-zip -r "${RESULT_DIR}.zip" "$RESULT_DIR"
-rm -rf "$RESULT_DIR"
+cd "$RESULT_PARENT" || exit 1
 
-echo "Done. Results saved in ${RESULT_DIR}.zip"
+if zip -r "${RESULT_NAME}.zip" "$RESULT_NAME"; then
+    rm -rf "$RESULT_NAME"
+    echo "Done. Results saved in ${RESULT_PARENT}/${RESULT_NAME}.zip"
+else
+    echo "Error: Failed to create results archive. Original results were preserved."
+    exit 1
+fi
