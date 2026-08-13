@@ -127,7 +127,7 @@ The available modes are `d` for the Default configuration, `r` for the Recommend
 
 The background stress workload is intended for reproducing the busy-server experiments. It is implemented by `setup_system_scripts/run_stress_random.sh` and alternates between 2 seconds of background CPU load and 2 seconds without additional load. The selected stress mode is recorded in `config.json`. Background stress was applied only in the server experiments. No additional synthetic stress workload was used on the laptop because it was evaluated under its existing background system load.
 
-After successful execution, the results directory is packaged into `<results_directory>.zip`. The archive contains the benchmark measurements, `config.json`, and `run_commands.txt`.
+After successful execution, the results directory is packaged into `<results_directory>.zip`. The archive contains the benchmark measurements, `config.json`, and `commands.txt`.
 
 ### Examples
 
@@ -197,7 +197,7 @@ Depending on the benchmark suite, results are further divided according to the a
 
 Within these directories, `base/` contains measurements for the corresponding complete configuration, while the remaining directories contain measurements obtained when evaluating individual system settings or selected combinations of settings.
 
-Each individual experiment contains execution-time measurements for the corresponding benchmarks together with a `config.json` file describing the system configuration and a `run_commands.txt` file containing the executed benchmark commands.
+Each individual experiment contains execution-time measurements for the corresponding benchmarks together with a `config.json` file describing the system configuration and a `commands.txt` file containing the executed benchmark commands.
 
 ## Statistical Analysis
 

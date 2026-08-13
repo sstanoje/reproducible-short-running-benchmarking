@@ -16,7 +16,7 @@ ADDITIONAL_COMMAND=""
 HEAP_SIZE=""
 STRESS="no_stress"
 STRESS_PID=""
-STRESS_SCRIPT="$SCRIPT_DIR/../run_stress_random.sh"
+STRESS_SCRIPT="$SETUP_SCRIPTS_DIR/run_stress_random.sh"
 
 show_help() {
     echo "Usage: sudo ./run_benchmarks.sh <executables_directory> <iterations> <results_directory> [OPTIONS]"
@@ -131,7 +131,7 @@ mkdir -p "$RESULT_DIR"
 
 cd "$EXECUTABLES_DIR" || exit 1
 print_configuration
-: > "$RESULT_DIR/run_commands.txt"
+: > "$RESULT_DIR/commands.txt"
 
 # Start stress if needed to simulate busy environment
 if [[ "$STRESS" == "stress" ]]; then
@@ -192,7 +192,7 @@ for file in *; do
         esac
 
         eval "$CMD" > "$RESULT_DIR/${file}.txt"
-        echo "$CMD" >> "$RESULT_DIR/run_commands.txt"
+        echo "$CMD" >> "$RESULT_DIR/commands.txt"
     fi
 done
 
