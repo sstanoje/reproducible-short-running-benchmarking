@@ -159,7 +159,7 @@ These paths are intentionally not inferred automatically because they depend on 
 
 ### PARSEC
 
-The PARSEC runner uses additional benchmark input files stored in the `helper_files/` directory alongside the execution script. The required files are copied automatically to the executable directory before each benchmark is executed and removed afterward.
+The PARSEC runner uses additional benchmark input files provided in `helper_files.zip` alongside the execution script. These files correspond to the PARSEC `3.0` version used in the experiments reported in the paper. The archive contains the benchmark-specific inputs required by the runner.
 
 ## Experimental Results
 

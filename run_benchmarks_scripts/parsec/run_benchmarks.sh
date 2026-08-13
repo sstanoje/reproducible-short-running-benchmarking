@@ -73,20 +73,37 @@ case "$MODE" in
 esac
 
 copy_inputs() {
-  if [[ ! -d "$SRC_DIR" ]]; then
-    echo "ERROR: Missing directory: $SRC_DIR" >&2
-    exit 1
-  fi
-  mapfile -t TO_COPY < <(find "$SRC_DIR" -mindepth 1 -maxdepth 1 ! -name '*.tar' -printf '%f\n' | sort)
-  for name in "${TO_COPY[@]:-}"; do
-    rsync -a --quiet -- "$SRC_DIR/$name" ./
-  done
+    if [[ ! -f "$SRC_ZIP" ]]; then
+        echo "ERROR: Missing helper archive: $SRC_ZIP" >&2
+        exit 1
+    fi
+
+    INPUT_TMP_DIR=$(mktemp -d)
+    unzip -q "$SRC_ZIP" -d "$INPUT_TMP_DIR"
+
+    # Support archives containing either the files directly
+    # or a top-level directory named after the benchmark
+    if [[ -d "$INPUT_TMP_DIR/$BENCH" ]]; then
+        INPUT_SRC_DIR="$INPUT_TMP_DIR/$BENCH"
+    else
+        INPUT_SRC_DIR="$INPUT_TMP_DIR"
+    fi
+
+    mapfile -t TO_COPY < <(
+        find "$INPUT_SRC_DIR" -mindepth 1 -maxdepth 1 ! -name '*.tar' -printf '%f\n' | sort
+    )
+
+    for name in "${TO_COPY[@]:-}"; do
+        rsync -a --quiet -- "$INPUT_SRC_DIR/$name" ./
+    done
 }
 
 cleanup_inputs() {
-  for name in "${TO_COPY[@]:-}"; do
-    rm -rf -- "$name"
-  done
+    for name in "${TO_COPY[@]:-}"; do
+        rm -rf -- "$name"
+    done
+
+    rm -rf -- "$INPUT_TMP_DIR"
 }
 
 build_cmd() {
@@ -167,7 +184,7 @@ for file in *; do
     # Only run if it's a file AND has the executable bit set
     if [[ -f "$file" && -x "$file" && "$file" != *.sh && "$file" != *.py ]]; then
         BENCH=$file
-        SRC_DIR="$SCRIPT_DIR/helper_files/$BENCH"
+        SRC_ZIP="$SCRIPT_DIR/helper_files/${BENCH}.zip"
         output_file="$RESULT_DIR/${BENCH}.txt"
         : > "$output_file"
 
