@@ -35,7 +35,11 @@ aslr_val=$(cat /proc/sys/kernel/randomize_va_space 2>/dev/null)
 [[ "$aslr_val" == "0" ]] && aslr_status="disabled" || aslr_status="enabled"
 
 # NTP
-ntp_status=$(systemctl is-active systemd-timesyncd 2>/dev/null || echo "inactive")
+if systemctl is-active --quiet systemd-timesyncd 2>/dev/null; then
+    ntp_status="active"
+else
+    ntp_status="inactive"
+fi
 
 # Swap
 if swapon --noheadings --show=NAME 2>/dev/null | grep -q .; then
