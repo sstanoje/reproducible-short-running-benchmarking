@@ -25,7 +25,7 @@ apply_grub_changes() {
     local grub_file="/etc/default/grub"
 
     sed -i \
-        "s|^GRUB_CMDLINE_LINUX=\".*\"|GRUB_CMDLINE_LINUX=\"$opts\"|" \
+        "s|^\(GRUB_CMDLINE_LINUX=\".*\)\"$|\1 $opts\"|" \
         "$grub_file"
 
     if command -v update-grub > /dev/null; then
