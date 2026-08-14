@@ -24,8 +24,6 @@ apply_grub_changes() {
     local opts="$1"
     local grub_file="/etc/default/grub"
 
-    cp "$grub_file" "${grub_file}.bak"
-
     sed -i \
         "s|^GRUB_CMDLINE_LINUX=\".*\"|GRUB_CMDLINE_LINUX=\"$opts\"|" \
         "$grub_file"
