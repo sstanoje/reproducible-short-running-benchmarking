@@ -63,6 +63,8 @@ mx --env ni-ee benchmark <benchmark_suite>-native-image:<benchmark> -- --jvm=nat
 
 The Native Image benchmark workflow performed the agent, instrumented-image, instrumented-run, and final image-build stages. The final benchmark execution stage was not part of executable preparation. This corresponds to the standard Native Image PGO workflow of building an instrumented executable, running it to collect profiling data, and rebuilding an optimized executable.
 
+The generated Native Image executables should be renamed to the corresponding benchmark identifiers expected by the benchmark execution scripts before they are collected in the executables directory. For example, the generated `dacapo-23-11-mr2-chopin-fop-pgo-ee` executable should be copied or renamed as `fop`.
+
 ### PolyBench/C
 
 PolyBench/C `4.2.1-beta` was compiled with GCC `9.4.0` using the `LARGE_DATASET` configuration. The benchmarks were compiled with `-O3`, `POLYBENCH_TIME`, and double precision.
@@ -76,6 +78,8 @@ gcc -std=c11 -O3 <architecture-option> -fno-plt -D_POSIX_C_SOURCE=200112L -DPOLY
 ```
 
 where `<architecture-option>` was `-march=native` for the UMA server and laptop, and `-march=haswell` for the NUMA server.
+
+The `<kernel_source>` argument denotes the relative path to the corresponding PolyBench/C kernel source file. The `<executable_name>` should be derived from this source path by removing the leading `./` and the `.c` suffix and replacing directory separators with underscores. For example, `./linear-algebra/kernels/atax/atax.c` is compiled as `linear-algebra_kernels_atax_atax`.
 
 ### PARSEC
 
@@ -153,10 +157,17 @@ No setup scripts are applied. Benchmarks are executed using the system's default
 
 ### Restoring the System
 
-To restore the system after benchmarking, remove the benchmarking-specific kernel options from `GRUB_CMDLINE_LINUX` in `/etc/default/grub`, update the GRUB configuration, and reboot:
+To restore the system after benchmarking, remove the benchmarking-specific kernel options from `GRUB_CMDLINE_LINUX` in `/etc/default/grub`, update the GRUB configuration, and reboot. For Ubuntu and other systems providing `update-grub`, use:
 
 ```
 sudo update-grub
+sudo reboot
+```
+
+On Arch Linux use:
+
+```
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo reboot
 ```
 
@@ -192,7 +203,7 @@ The available modes are `d` for the Default configuration, `r` for the Recommend
 
 The background stress workload is intended for reproducing the busy-server experiments. It is implemented by `setup_system_scripts/run_stress_random.sh` and alternates between 2 seconds of background CPU load and 2 seconds without additional load. The selected stress mode is recorded in `config.json`. Background stress was applied only in the server experiments. No additional synthetic stress workload was used on the laptop because it was evaluated under its existing background system load.
 
-After successful execution, the results directory is packaged into `<results_directory>.zip`. The archive contains the benchmark measurements, `config.json`, and `commands.txt`.
+After benchmark execution completes, the results directory is packaged into `<results_directory>.zip`. The archive contains the benchmark measurements, `config.json`, and `commands.txt`.
 
 ### Examples
 
@@ -227,7 +238,7 @@ sudo ./run_benchmarks.sh /path/to/executables 105 results_mtr -m mtr
 Before running DaCapo benchmarks, the following benchmark-specific paths in the execution script must be configured manually:
 
 - `PATH_TO_HOME` — home directory used by benchmarks that access files or resources relative to the user home directory.
-- `PATH_TO_LABS_JDK` — path to the LabsJDK installation used during the experiments. This is required by benchmarks that access the Java runtime installation during execution.
+- `PATH_TO_LABS_JDK` — path to the LabsJDK installation used during the experiments. This is required by the `fop` benchmark, which accesses the Java runtime installation during execution.
 
 These paths are intentionally not inferred automatically because they depend on the local benchmark build and runtime environment.
 

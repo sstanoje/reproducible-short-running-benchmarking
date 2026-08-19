@@ -30,8 +30,13 @@ apply_grub_changes() {
 
     if command -v update-grub > /dev/null; then
         update-grub
-    else
+    elif command -v grub-mkconfig > /dev/null; then
+        grub-mkconfig -o /boot/grub/grub.cfg
+    elif command -v grub2-mkconfig > /dev/null; then
         grub2-mkconfig -o /boot/grub2/grub.cfg
+    else
+        echo "ERROR: Could not find a supported GRUB configuration command."
+        exit 1
     fi
 
     echo
