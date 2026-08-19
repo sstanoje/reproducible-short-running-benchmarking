@@ -19,7 +19,7 @@ The repository is organized as follows:
 
 ## Requirements
 
-The provided system-configuration scripts currently support **Linux systems with Intel processors**. Root privileges are required because the scripts modify CPU, kernel, memory, and boot configuration settings.
+The provided system-configuration scripts currently support **GRUB-based Linux systems with Intel processors**. Root privileges are required because the scripts modify CPU, kernel, memory, and boot configuration settings.
 
 The scripts rely on standard Linux utilities together with:
 
