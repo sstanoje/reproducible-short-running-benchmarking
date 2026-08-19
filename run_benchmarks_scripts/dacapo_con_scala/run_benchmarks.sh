@@ -159,7 +159,7 @@ for file in *; do
         # Build command
         CMD="$ADDITIONAL_COMMAND ./$file $file -n $ITERATIONS -s default --preserve $HEAP_SIZE"
 
-        eval "$CMD" 2>&1 "$RESULT_DIR/${file}.txt"
+        eval "$CMD" > "$RESULT_DIR/${file}.txt" 2>&1
         echo "$CMD" >> "$RESULT_DIR/commands.txt"
     fi
 done

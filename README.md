@@ -72,7 +72,7 @@ For the UMA server and laptop, the executables were built using `-march=native`.
 The general compilation command was:
 
 ```
-gcc -std=c11 -O3 <architecture-option> -fno-plt -D_POSIX_C_SOURCE=200112L -DPOLYBENCH_TIME -DLARGE_DATASET -I utilities <kernel>.c utilities/polybench.c -o build/bin/<category>_<kernel> -lm
+gcc -std=c11 -O3 <architecture-option> -fno-plt -D_POSIX_C_SOURCE=200112L -DPOLYBENCH_TIME -DLARGE_DATASET -I utilities <kernel_source> utilities/polybench.c -o build/bin/<executable_name> -lm
 ```
 
 where `<architecture-option>` was `-march=native` for the UMA server and laptop, and `-march=haswell` for the NUMA server.
@@ -87,7 +87,7 @@ From the root directory of the PARSEC source tree, the benchmarks can be built u
 ./bin/parsecmgmt -a build -p all -c gcc
 ```
 
-The evaluated PARSEC benchmarks were built using the pthreads implementation.
+Among the eight PARSEC benchmarks used in our evaluation, freqmine uses OpenMP, while the remaining seven use pthreads.
 
 ## System Setup
 

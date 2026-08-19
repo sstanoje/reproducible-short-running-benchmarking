@@ -165,18 +165,23 @@ def load_data(kind, config, variant, exclude_scala=False):
             for environment, machine in ENVIRONMENTS.items():
                 directory = RESULTS_DIR / suite / environment / CONFIG_DIRS[config] / variant
 
-                for file_path in sorted(directory.glob(f"{config}_config*.json")):
+                summary_files = sorted(directory.glob("*.json"))
+
+                if len(summary_files) > 1:
+                    raise RuntimeError(f"Expected at most one processed JSON summary in {directory}, found {len(summary_files)}")
+
+                for file_path in summary_files:
                     with file_path.open() as file:
                         for row in json.load(file):
                             benchmark = row["benchmark"]
+
                             if benchmark not in benchmarks:
                                 continue
 
                             result[language][machine][(suite, benchmark)] = {
                                 "time": row["median"],
-                                "rmad": row["RMAD(%)"],
+                                "rmad": row["RMAD(%)"]
                             }
-
     return result
 
 
