@@ -32,14 +32,14 @@ The scripts rely on standard Linux utilities together with:
 - `rsync`
 - GNU `time`
 
-The experiments reported in the paper were performed using the following benchmark and toolchain versions. These are the versions used to obtain the published results; other versions were not evaluated.
+The experiments reported in the paper were performed using the following benchmark and toolchain versions. These are the versions used to obtain the published results; other versions were not evaluated. The Java and Scala benchmark versions listed below are the versions provided by the Oracle GraalVM version used in our experiments.
 
 - Oracle GraalVM: `25-dev+37.1` (Java `25+37-LTS`)
 - DaCapo: `23.11-MR2-chopin`
 - DaCapo con Scala: `0.1.0-SNAPSHOT`
 - Renaissance: `0.16.0`
 - PolyBench/C: `4.2.1-beta`
-- PARSEC: `3.0`
+- PARSEC: `3.0-beta-20150206`
 - GCC/G++: `9.4.0`
 
 The analysis scripts additionally require:
@@ -79,9 +79,11 @@ where `<architecture-option>` was `-march=native` for the UMA server and laptop,
 
 ### PARSEC
 
-PARSEC `3.0` was built using GCC `9.4.0` and the standard `amd64-linux.gcc` configuration:
+PARSEC `3.0-beta-20150206` was built using GCC/G++ `9.4.0` and the standard `gcc` build configuration. To reproduce the toolchain used in the experiments, the compiler paths in `config/gcc.bldconf` should be configured to use GCC/G++ `9.4.0`.
 
-```
+From the root directory of the PARSEC source tree, the benchmarks can be built using:
+
+```bash
 ./bin/parsecmgmt -a build -p all -c gcc
 ```
 
