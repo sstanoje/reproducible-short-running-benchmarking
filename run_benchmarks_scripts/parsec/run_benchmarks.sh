@@ -235,13 +235,23 @@ for file in *; do
 
             # Use /usr/bin/time to capture wall clock time in seconds
             if /usr/bin/time -f "%e" -o "$tmp" -- "${CMD[@]}" >/dev/null 2>&1; then
-              secs=$(cat "$tmp")
-              # Convert seconds to milliseconds (msec)
-              awk -v s="$secs" 'BEGIN{printf("%.0f msec\n", s*1000)}' >> "$output_file"
+                secs=$(cat "$tmp")
+                awk -v s="$secs" 'BEGIN{printf("%.0f msec\n", s*1000)}' >> "$output_file"
             else
-              echo "-1" >> "$output_file"
+                rm -f -- "$tmp"
+                cleanup_inputs
+
+                if [[ "$STRESS" == "stress" && -n "$STRESS_PID" ]]; then
+                    kill "$STRESS_PID" 2>/dev/null || true
+                    wait "$STRESS_PID" 2>/dev/null || true
+                fi
+
+                echo "ERROR: Benchmark '$BENCH' failed during iteration $i." >&2
+                echo "Partial results have been preserved in: $RESULT_DIR" >&2
+                exit 1
+
+                rm -f -- "$tmp"
             fi
-            rm -f -- "$tmp"
         done
 
         echo "${CMD[@]}" >> "$RESULT_DIR/commands.txt"
