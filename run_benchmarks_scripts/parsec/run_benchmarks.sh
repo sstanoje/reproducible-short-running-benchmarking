@@ -246,12 +246,12 @@ for file in *; do
                     wait "$STRESS_PID" 2>/dev/null || true
                 fi
 
-                echo "ERROR: Benchmark '$BENCH' failed during iteration $i." >&2
+                echo "ERROR: Benchmark '$BENCH' failed during repetition $i." >&2
                 echo "Partial results have been preserved in: $RESULT_DIR" >&2
                 exit 1
-
-                rm -f -- "$tmp"
             fi
+
+            rm -f -- "$tmp"
         done
 
         echo "${CMD[@]}" >> "$RESULT_DIR/commands.txt"

@@ -10,7 +10,7 @@ The repository provides system configuration scripts, benchmark execution script
 
 The repository is organized as follows:
 
-- `setup_system_scripts/` — scripts used to configure the system for the evaluated benchmarking configurations and to generate the background stress workload used in the busy-server experiments.
+- `setup_system_scripts/` — scripts used to configure the recommended (R) and multi-threaded recommended (MTR) baseline configurations and to generate the background stress workload used in the busy-server experiments.
 - `run_benchmarks_scripts/` — scripts used to execute the benchmarks and collect execution-time measurements.
 - `results/` — experimental results collected during the evaluation.
 - `wilcoxon_test_results/` — results of the Wilcoxon statistical tests reported in the paper.
@@ -54,12 +54,27 @@ The benchmark runners expect prebuilt executables.
 
 ### Java and Scala Benchmarks
 
-DaCapo, DaCapo con Scala, and Renaissance benchmarks were compiled to native executables using Oracle GraalVM `25-dev+37.1` with Java/LabsJDK `25+37-LTS`, using Native Image Enterprise Edition with profile-guided optimization (PGO). Each benchmark executable can be built separately
-by running:
+DaCapo, DaCapo con Scala, and Renaissance benchmarks were compiled to native executables using Oracle GraalVM `25-dev+37.1` with Java/LabsJDK `25+37-LTS`, using Native Image Enterprise Edition with profile-guided optimization (PGO).
+
+Before building the benchmarks, set `JAVA_HOME` to the LabsJDK installation used for the build:
+
+```
+export JAVA_HOME=<path_to_LabsJDK>
+```
+
+Then, from the `graal-enterprise/vm-enterprise/` directory of the GraalVM Enterprise Edition source tree, build the Native Image component:
+
+```
+mx --env ni-ee build
+```
+
+After the build completes, an individual benchmark can be compiled using:
 
 ```
 mx --env ni-ee benchmark <benchmark_suite>-native-image:<benchmark> -- --jvm=native-image --jvm-config=pgo-ee -Dnative-image.benchmark.stages=agent,instrument-image,instrument-run,image
 ```
+
+The GraalVM benchmark-suite identifiers are `dacapo`, `scala_dacapo`, and `renaissance` for DaCapo, DaCapo con Scala, and Renaissance, respectively.
 
 The Native Image benchmark workflow performed the agent, instrumented-image, instrumented-run, and final image-build stages. The final benchmark execution stage was not part of executable preparation. This corresponds to the standard Native Image PGO workflow of building an instrumented executable, running it to collect profiling data, and rebuilding an optimized executable.
 
@@ -70,6 +85,12 @@ The generated Native Image executables should be renamed to the corresponding be
 PolyBench/C `4.2.1-beta` was compiled with GCC `9.4.0` using the `LARGE_DATASET` configuration. The benchmarks were compiled with `-O3`, `POLYBENCH_TIME`, and double precision.
 
 For the UMA server and laptop, the executables were built using `-march=native`. For the NUMA server, they were built using `-march=haswell`.
+
+From the root directory of the PolyBench/C source tree, create the output directory before compiling the benchmarks:
+
+```
+mkdir -p build/bin
+```
 
 The general compilation command was:
 
@@ -87,7 +108,7 @@ PARSEC `3.0-beta-20150206` was built using GCC/G++ `9.4.0` and the standard `gcc
 
 From the root directory of the PARSEC source tree, the benchmarks can be built using:
 
-```bash
+```
 ./bin/parsecmgmt -a build -p all -c gcc
 ```
 
@@ -179,6 +200,8 @@ After rebooting, re-enable network time synchronization:
 sudo timedatectl set-ntp true
 ```
 
+The system should be restored to its default state before switching between the R, MTR, and D baseline configurations, so that boot-time and runtime settings from a previous benchmarking configuration do not remain active.
+
 ## Running the Benchmarks
 
 Benchmark execution scripts are provided in `run_benchmarks_scripts/`. There is a separate directory for each benchmark suite, containing a dedicated execution script. The corresponding script should be used to run benchmarks from that suite. All scripts follow the same general command-line interface:
@@ -190,7 +213,7 @@ sudo ./run_benchmarks.sh <executables_directory> <iterations> <results_directory
 The positional arguments are:
 
 - `<executables_directory>` — directory containing the benchmark suite executables.
-- `<iterations>` — number of iterations for each benchmark.
+- `<iterations>` — number of benchmark iterations for Java and Scala benchmarks or complete benchmark executions for C and C++ benchmarks.
 - `<results_directory>` — directory in which the collected measurements and execution metadata, including the system configuration and executed commands, are stored.
 
 The commonly supported options are:
@@ -201,7 +224,7 @@ The commonly supported options are:
 
 The available modes are `d` for the Default configuration, `r` for the Recommended configuration, and, for benchmark suites supporting multi-threaded execution, `mtr` for the Multi-Threaded Recommended configuration.
 
-The background stress workload is intended for reproducing the busy-server experiments. It is implemented by `setup_system_scripts/run_stress_random.sh` and alternates between 2 seconds of background CPU load and 2 seconds without additional load. The selected stress mode is recorded in `config.json`. Background stress was applied only in the server experiments. No additional synthetic stress workload was used on the laptop because it was evaluated under its existing background system load.
+The background stress workload is intended for reproducing the busy-server experiments. It is implemented by `setup_system_scripts/run_stress_random.sh` and alternates between 2 seconds of CPU stress using a number of workers equal to the number of logical CPUs reported by `nproc` and 2 seconds without additional load. The selected stress mode is recorded in `config.json`. Background stress was applied only in the server experiments. No additional synthetic stress workload was used on the laptop because it was evaluated under its existing background system load.
 
 After benchmark execution completes, the results directory is packaged into `<results_directory>.zip`. The archive contains the benchmark measurements, `config.json`, and `commands.txt`.
 
@@ -280,7 +303,7 @@ The scripts in `analysis_scripts/` can be used to regenerate the processed bench
 
 ### Processing the Experimental Results
 
-Each benchmark suite has a dedicated processing script under `analysis_scripts/process_results_scripts/`. The scripts discard the first five warmup iterations and generate JSON summaries containing the statistics used in the analysis, including median execution time and RMAD.
+Each benchmark suite has a dedicated processing script under `analysis_scripts/process_results_scripts/`. The scripts discard the first five warmup repetitions and generate JSON summaries containing the statistics used in the analysis, including median execution time and RMAD.
 
 From the repository root, run:
 
@@ -352,7 +375,7 @@ Each report contains the corresponding statistical comparison, effect, p-value, 
 
 The complete experimental evaluation reported in the paper required more than **1069 hours of aggregate benchmark execution time**. Reproducing the entire experimental campaign therefore requires substantial computational resources and time.
 
-Individual benchmark suites and configurations can be reproduced independently. As an indication of the expected execution time, running all benchmarks of a suite for 105 iterations under the Recommended configuration on the idle UMA server takes approximately:
+Individual benchmark suites and configurations can be reproduced independently. As an indication of the expected execution time, running all benchmarks of a suite for 105 repetitions under the Recommended configuration on the idle UMA server takes approximately:
 
 - DaCapo — 3.5 hours
 - DaCapo con Scala — 0.6 hours
