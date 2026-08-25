@@ -317,6 +317,19 @@ For example:
 ./analysis_scripts/process_results_scripts/dacapo/process_benchmarks.sh
 ```
 
+### Stability per Number of Measurement Iterations
+
+Each benchmark suite also provides a `stability_per_iterations.py` script for reproducing the analysis of measurement stability as a function of the number of measurement iterations. The script discards the first five warmup iterations and computes RMAD using the first 30, 40, ..., 100 measurement iterations.
+
+From the repository root, run:
+
+```
+python3 analysis_scripts/process_results_scripts/<benchmark_suite>/stability_per_iterations.py \
+  <measurements_directory> <output_file>
+```
+
+The <measurements_directory> argument specifies an individual directory containing the raw benchmark measurements, while <output_file> specifies the JSON file in which the per-benchmark RMAD values are stored.
+
 ### Wilcoxon Statistical Tests
 
 The Wilcoxon base reports can be regenerated using:
