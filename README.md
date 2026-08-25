@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains the artifacts accompanying the paper **Practical Benchmarking Configurations for Reproducible Execution-Time Measurements of CI/CD-Style Workloads**, accepted for publication in *ACM Transactions on Software Engineering and Methodology (TOSEM)*.
+This repository contains the artifacts accompanying the paper **Practical Benchmarking Configurations for Reproducible Execution-Time Measurements of CI/CD-Style Workloads**, published in *ACM Transactions on Software Engineering and Methodology (TOSEM)*. DOI: [10.1145/3838807](https://doi.org/10.1145/3838807).
 
 The repository provides system configuration scripts, benchmark execution scripts, experimental results, and statistical analysis outputs used in the evaluation. Its purpose is to support reproduction and further evaluation of the benchmarking configurations and results presented in the paper.
 

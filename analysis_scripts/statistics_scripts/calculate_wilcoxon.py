@@ -93,7 +93,7 @@ OPTION_LABELS = {
         "recommended": "R+C0-9", "mt_recommended": "MTR+C0-9", "default": "D+C0",
     },
     "hyper_threading": {
-        "recommended": "R+HTreading", "default": "D-HTreading",
+        "recommended": "R+HThreading", "default": "D-HThreading",
     },
     "pinned": {
         "recommended": "R-Pinned", "default": "D+Pinned",
