@@ -271,7 +271,7 @@ The PARSEC runner uses additional benchmark input files provided as benchmark-sp
 
 ## Experimental Results
 
-The `results/` directory contains the experimental measurements used in the paper. Results are first organized by benchmark suite:
+The `results/` directory contains the benchmark execution-time measurements used in the evaluation. Results are first organized by benchmark suite:
 
 - `dacapo/`
 - `dacapo_con_scala/`
