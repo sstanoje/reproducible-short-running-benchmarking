@@ -13,6 +13,7 @@ The repository is organized as follows:
 - `setup_system_scripts/` — scripts used to configure the recommended (R) and multi-threaded recommended (MTR) baseline configurations and to generate the background stress workload used in the busy-server experiments.
 - `run_benchmarks_scripts/` — scripts used to execute the benchmarks and collect execution-time measurements.
 - `results/` — experimental results collected during the evaluation.
+- `stability_per_iterations_results/` — RMAD results for different numbers of measurement iterations.
 - `wilcoxon_test_results/` — results of the Wilcoxon statistical tests reported in the paper.
 - `analysis_scripts/` — scripts used to process the experimental measurements and reproduce the reported statistical analyses.
 - `descriptions/` — descriptions of the evaluated benchmarks and benchmarking configurations.
@@ -299,7 +300,7 @@ Each individual experiment contains execution-time measurements for the correspo
 
 ## Reproducing the Reported Statistics
 
-The scripts in `analysis_scripts/` can be used to regenerate the processed benchmark results and Wilcoxon statistical reports from the experimental measurements stored in `results/`.
+The scripts in `analysis_scripts/` can be used to regenerate the processed benchmark results, measurement-iteration stability results, and Wilcoxon statistical reports from the experimental measurements stored in `results/`.
 
 ### Processing the Experimental Results
 
