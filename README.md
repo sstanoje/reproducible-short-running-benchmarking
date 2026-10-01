@@ -4,18 +4,20 @@
 
 This repository contains the artifacts accompanying the paper **Practical Benchmarking Configurations for Reproducible Execution-Time Measurements of CI/CD-Style Workloads**, published in *ACM Transactions on Software Engineering and Methodology (TOSEM)*. DOI: [10.1145/3838807](https://doi.org/10.1145/3838807).
 
-The repository provides system configuration scripts, benchmark execution scripts, experimental results, and statistical analysis outputs used in the evaluation. Its purpose is to support reproduction and further evaluation of the benchmarking configurations and results presented in the paper.
+The repository provides system configuration scripts, benchmark execution scripts, experimental results, and analysis outputs used in the evaluation. Its purpose is to support reproduction and further evaluation of the benchmarking configurations and results presented in the paper.
 
 ## Repository Structure
 
 The repository is organized as follows:
 
+- `generate_all.sh` — regenerates all script-generated analysis outputs from the provided experimental measurements.
 - `setup_system_scripts/` — scripts used to configure the recommended (R) and multi-threaded recommended (MTR) baseline configurations and to generate the background stress workload used in the busy-server experiments.
 - `run_benchmarks_scripts/` — scripts used to execute the benchmarks and collect execution-time measurements.
 - `results/` — experimental results collected during the evaluation.
 - `stability_per_iterations_results/` — RMAD results for different numbers of measurement iterations.
+- `warmup_analysis_results/` — generated warmup-analysis results for the Recommended configuration.
 - `wilcoxon_test_results/` — results of the Wilcoxon statistical tests reported in the paper.
-- `analysis_scripts/` — scripts used to process the experimental measurements and reproduce the reported statistical analyses.
+- `analysis_scripts/` — scripts used to process the experimental measurements and reproduce the reported analyses.
 - `descriptions/` — descriptions of the evaluated benchmarks and benchmarking configurations.
 
 ## Requirements
@@ -298,17 +300,17 @@ Within these directories, `base/` contains measurements for the corresponding co
 
 Each individual experiment contains execution-time measurements for the corresponding benchmarks together with a `config.json` file describing the system configuration and a `commands.txt` file containing the executed benchmark commands.
 
-## Reproducing the Reported Statistics
+## Reproducing the Reported Results
 
-The scripts in `analysis_scripts/` can be used to regenerate the processed benchmark results, measurement-iteration stability results, and Wilcoxon statistical reports from the experimental measurements stored in `results/`.
+The scripts in `analysis_scripts/` can be used to regenerate the processed benchmark results, warmup-analysis results, measurement-iteration stability results, and Wilcoxon statistical reports from the experimental measurements stored in `results/`.
 
-To regenerate all three sets of analysis outputs with one command, run:
+To regenerate all four sets of analysis outputs with one command, run:
 
 ```
 ./generate_all.sh
 ```
 
-The wrapper calls the existing analysis scripts in sequence. It overwrites the generated JSON summaries and reports while preserving the raw measurements. It can be invoked from any working directory and stops if a stage fails.
+The wrapper calls the existing analysis scripts in sequence. It regenerates the analysis outputs while preserving the raw measurements. It can be invoked from any working directory and stops if a stage fails.
 
 ### Processing the Experimental Results
 
@@ -324,6 +326,22 @@ For example:
 
 ```
 ./analysis_scripts/process_results_scripts/dacapo/process_benchmarks.sh
+```
+
+### Warmup Analysis
+
+To reproduce the warmup analysis reported in the paper, run from the repository root:
+
+```
+python3 analysis_scripts/warmup_scripts/calculate_warmup.py
+```
+
+The script analyzes the baseline Recommended measurements from all five execution environments. It compares the first five iterations of each benchmark with the 99th percentile of the subsequent 100 measurement iterations and counts, for each iteration, the unique benchmarks exceeding this reference by at least 1% in at least one environment.
+
+The generated table is stored in:
+
+```
+warmup_analysis_results/recommended_warmup_evidence.md
 ```
 
 ### Stability per Number of Measurement Iterations

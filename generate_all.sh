@@ -13,13 +13,17 @@ options=(
 )
 
 # Process all measurements.
-echo "[1/3] Regenerating processed summaries"
+echo "[1/4] Regenerating processed summaries"
 for suite in "${suites[@]}"; do
     bash "analysis_scripts/process_results_scripts/$suite/process_benchmarks.sh"
 done
 
+# Calculate warmup analysis.
+echo "[2/4] Regenerating warmup analysis"
+python3 analysis_scripts/warmup_scripts/calculate_warmup.py
+
 # Calculate iteration stability for base experiments.
-echo "[2/3] Regenerating iteration stability files"
+echo "[3/4] Regenerating iteration stability files"
 for suite in "${suites[@]}"; do
     for config_dir in results/"$suite"/*/*; do
         output_dir="stability_per_iterations_results/${config_dir#results/}"
@@ -33,7 +37,7 @@ for suite in "${suites[@]}"; do
 done
 
 # Calculate Wilcoxon reports for every setting.
-echo "[3/3] Regenerating Wilcoxon reports"
+echo "[4/4] Regenerating Wilcoxon reports"
 for option in "${options[@]}"; do
     python3 analysis_scripts/statistics_scripts/calculate_wilcoxon.py "$option"
 done
