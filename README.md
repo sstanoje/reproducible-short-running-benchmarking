@@ -302,6 +302,14 @@ Each individual experiment contains execution-time measurements for the correspo
 
 The scripts in `analysis_scripts/` can be used to regenerate the processed benchmark results, measurement-iteration stability results, and Wilcoxon statistical reports from the experimental measurements stored in `results/`.
 
+To regenerate all three sets of analysis outputs with one command, run:
+
+```
+./generate_all.sh
+```
+
+The wrapper calls the existing analysis scripts in sequence. It overwrites the generated JSON summaries and reports while preserving the raw measurements. It can be invoked from any working directory and stops if a stage fails.
+
 ### Processing the Experimental Results
 
 Each benchmark suite has a dedicated processing script under `analysis_scripts/process_results_scripts/`. The scripts discard the first five warmup repetitions and generate JSON summaries containing the statistics used in the analysis, including median execution time and RMAD.
