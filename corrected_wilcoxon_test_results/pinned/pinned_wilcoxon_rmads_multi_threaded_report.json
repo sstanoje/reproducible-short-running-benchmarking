@@ -1,0 +1,138 @@
+{
+    "recommended vs modified recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -0.415,
+                "p": 0.009725523541639646,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-Pinned by 0.415 pp"
+            },
+            "busy UMA server": {
+                "effect": -3.804,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-Pinned by 3.804 pp"
+            },
+            "laptop": {
+                "effect": -0.828,
+                "p": 0.0013462033496218731,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-Pinned by 0.828 pp"
+            },
+            "idle NUMA server": {
+                "effect": -1.172,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-Pinned by 1.172 pp"
+            },
+            "busy NUMA server": {
+                "effect": -4.386,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-Pinned by 4.386 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": -0.548,
+                "p": 0.027991815485665747,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-Pinned by 0.548 pp"
+            },
+            "busy UMA server": {
+                "effect": -2.92,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-Pinned by 2.920 pp"
+            },
+            "laptop": {
+                "effect": -0.231,
+                "p": 0.07961580146011343,
+                "significant": "no",
+                "result": "recommended lower RMAD than R-Pinned by 0.231 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.411,
+                "p": 0.046399461870904594,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-Pinned by 0.411 pp"
+            },
+            "busy NUMA server": {
+                "effect": -5.358,
+                "p": 0.011718685599768628,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R-Pinned by 5.358 pp"
+            }
+        }
+    },
+    "mt_recommended vs modified mt_recommended": {
+        "managed languages": {},
+        "unmanaged languages": {}
+    },
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 0.517,
+                "p": 0.049421966979675956,
+                "significant": "yes",
+                "result": "D+Pinned lower RMAD than default by 0.517 pp"
+            },
+            "busy UMA server": {
+                "effect": 1.286,
+                "p": 0.19610818609418723,
+                "significant": "no",
+                "result": "D+Pinned lower RMAD than default by 1.286 pp"
+            },
+            "laptop": {
+                "effect": 2.03,
+                "p": 0.011285575373529618,
+                "significant": "yes",
+                "result": "D+Pinned lower RMAD than default by 2.030 pp"
+            },
+            "idle NUMA server": {
+                "effect": 1.152,
+                "p": 0.004455352355471741,
+                "significant": "yes",
+                "result": "D+Pinned lower RMAD than default by 1.152 pp"
+            },
+            "busy NUMA server": {
+                "effect": 3.396,
+                "p": 0.07873081119613402,
+                "significant": "no",
+                "result": "D+Pinned lower RMAD than default by 3.396 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 0.034,
+                "p": 0.6120898800892568,
+                "significant": "no",
+                "result": "D+Pinned lower RMAD than default by 0.034 pp"
+            },
+            "busy UMA server": {
+                "effect": 13.475,
+                "p": 0.0687035743228782,
+                "significant": "no",
+                "result": "D+Pinned lower RMAD than default by 13.475 pp"
+            },
+            "laptop": {
+                "effect": 1.096,
+                "p": 0.09289194088370532,
+                "significant": "no",
+                "result": "D+Pinned lower RMAD than default by 1.096 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.445,
+                "p": 0.3454475304692257,
+                "significant": "no",
+                "result": "D+Pinned lower RMAD than default by 0.445 pp"
+            },
+            "busy NUMA server": {
+                "effect": 12.234,
+                "p": 0.12348527214454898,
+                "significant": "no",
+                "result": "D+Pinned lower RMAD than default by 12.234 pp"
+            }
+        }
+    }
+}

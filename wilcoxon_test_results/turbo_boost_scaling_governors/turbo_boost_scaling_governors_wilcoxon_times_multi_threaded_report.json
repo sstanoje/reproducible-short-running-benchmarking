@@ -1,0 +1,200 @@
+{
+    "recommended vs modified recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 31.139,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "R+TurboBoost+Powersave/Schedutil faster than recommended by 31.139%"
+            },
+            "busy UMA server": {
+                "effect": 25.489,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "R+TurboBoost+Powersave/Schedutil faster than recommended by 25.489%"
+            },
+            "laptop": {
+                "effect": 63.334,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "R+TurboBoost+Powersave/Schedutil faster than recommended by 63.334%"
+            },
+            "idle NUMA server": {
+                "effect": 24.307,
+                "p": 0.0005312427827532942,
+                "significant": "yes",
+                "result": "R+TurboBoost+Powersave/Schedutil faster than recommended by 24.307%"
+            },
+            "busy NUMA server": {
+                "effect": 13.766,
+                "p": 0.0027077077180259045,
+                "significant": "yes",
+                "result": "R+TurboBoost+Powersave/Schedutil faster than recommended by 13.766%"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 32.979,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "R+TurboBoost+Powersave/Schedutil faster than recommended by 32.979%"
+            },
+            "busy UMA server": {
+                "effect": 25.755,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "R+TurboBoost+Powersave/Schedutil faster than recommended by 25.755%"
+            },
+            "laptop": {
+                "effect": 63.465,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "R+TurboBoost+Powersave/Schedutil faster than recommended by 63.465%"
+            },
+            "idle NUMA server": {
+                "effect": 33.209,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "R+TurboBoost+Powersave/Schedutil faster than recommended by 33.209%"
+            },
+            "busy NUMA server": {
+                "effect": 20.489,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "R+TurboBoost+Powersave/Schedutil faster than recommended by 20.489%"
+            }
+        }
+    },
+    "mt_recommended vs modified mt_recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 22.83,
+                "p": 0.0007764114990637485,
+                "significant": "yes",
+                "result": "MTR+TurboBoost+Powersave/Schedutil faster than mt_recommended by 22.830%"
+            },
+            "busy UMA server": {
+                "effect": 15.928,
+                "p": 0.0005312427827532942,
+                "significant": "yes",
+                "result": "MTR+TurboBoost+Powersave/Schedutil faster than mt_recommended by 15.928%"
+            },
+            "laptop": {
+                "effect": 7.779,
+                "p": 0.09798930270791739,
+                "significant": "no",
+                "result": "MTR+TurboBoost+Powersave/Schedutil faster than mt_recommended by 7.779%"
+            },
+            "idle NUMA server": {
+                "effect": 16.216,
+                "p": 0.03400102540139365,
+                "significant": "yes",
+                "result": "MTR+TurboBoost+Powersave/Schedutil faster than mt_recommended by 16.216%"
+            },
+            "busy NUMA server": {
+                "effect": 11.886,
+                "p": 0.19610818609418723,
+                "significant": "no",
+                "result": "MTR+TurboBoost+Powersave/Schedutil faster than mt_recommended by 11.886%"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 23.377,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "MTR+TurboBoost+Powersave/Schedutil faster than mt_recommended by 23.377%"
+            },
+            "busy UMA server": {
+                "effect": 25.373,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "MTR+TurboBoost+Powersave/Schedutil faster than mt_recommended by 25.373%"
+            },
+            "laptop": {
+                "effect": -1.948,
+                "p": 0.49896229860376107,
+                "significant": "no",
+                "result": "mt_recommended faster than MTR+TurboBoost+Powersave/Schedutil by 1.948%"
+            },
+            "idle NUMA server": {
+                "effect": 55.263,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "MTR+TurboBoost+Powersave/Schedutil faster than mt_recommended by 55.263%"
+            },
+            "busy NUMA server": {
+                "effect": 52.941,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "MTR+TurboBoost+Powersave/Schedutil faster than mt_recommended by 52.941%"
+            }
+        }
+    },
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -12.129,
+                "p": 0.0019187660162923678,
+                "significant": "yes",
+                "result": "default faster than D-TurboBoost+Performance by 12.129%"
+            },
+            "busy UMA server": {
+                "effect": -15.376,
+                "p": 0.007169734292803208,
+                "significant": "yes",
+                "result": "default faster than D-TurboBoost+Performance by 15.376%"
+            },
+            "laptop": {
+                "effect": -28.905,
+                "p": 0.0013462033496218731,
+                "significant": "yes",
+                "result": "default faster than D-TurboBoost+Performance by 28.905%"
+            },
+            "idle NUMA server": {
+                "effect": -7.286,
+                "p": 0.9176315934670087,
+                "significant": "no",
+                "result": "default faster than D-TurboBoost+Performance by 7.286%"
+            },
+            "busy NUMA server": {
+                "effect": -8.165,
+                "p": 0.40804420568711997,
+                "significant": "no",
+                "result": "default faster than D-TurboBoost+Performance by 8.165%"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": -20.0,
+                "p": 0.01714803250145893,
+                "significant": "yes",
+                "result": "default faster than D-TurboBoost+Performance by 20.000%"
+            },
+            "busy UMA server": {
+                "effect": -21.164,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than D-TurboBoost+Performance by 21.164%"
+            },
+            "laptop": {
+                "effect": -17.143,
+                "p": 0.06297905121445523,
+                "significant": "no",
+                "result": "default faster than D-TurboBoost+Performance by 17.143%"
+            },
+            "idle NUMA server": {
+                "effect": -10.227,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than D-TurboBoost+Performance by 10.227%"
+            },
+            "busy NUMA server": {
+                "effect": -13.281,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "default faster than D-TurboBoost+Performance by 13.281%"
+            }
+        }
+    }
+}

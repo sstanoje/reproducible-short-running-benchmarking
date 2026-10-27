@@ -1,0 +1,107 @@
+{
+    "recommended vs modified recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -3.953,
+                "p": 0.009725523541639646,
+                "significant": "yes",
+                "result": "recommended faster than R-FixedHeap by 3.953%"
+            },
+            "busy UMA server": {
+                "effect": -3.389,
+                "p": 0.004455352355471741,
+                "significant": "yes",
+                "result": "recommended faster than R-FixedHeap by 3.389%"
+            },
+            "laptop": {
+                "effect": -4.002,
+                "p": 0.015085824244536002,
+                "significant": "yes",
+                "result": "recommended faster than R-FixedHeap by 4.002%"
+            },
+            "idle NUMA server": {
+                "effect": -3.75,
+                "p": 0.004455352355471741,
+                "significant": "yes",
+                "result": "recommended faster than R-FixedHeap by 3.750%"
+            },
+            "busy NUMA server": {
+                "effect": -4.061,
+                "p": 0.003783246451258581,
+                "significant": "yes",
+                "result": "recommended faster than R-FixedHeap by 4.061%"
+            }
+        },
+        "unmanaged languages": {}
+    },
+    "mt_recommended vs modified mt_recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -8.246,
+                "p": 0.0009350911193154891,
+                "significant": "yes",
+                "result": "mt_recommended faster than MTR-FixedHeap by 8.246%"
+            },
+            "busy UMA server": {
+                "effect": -12.075,
+                "p": 0.0011233790034369743,
+                "significant": "yes",
+                "result": "mt_recommended faster than MTR-FixedHeap by 12.075%"
+            },
+            "laptop": {
+                "effect": -8.719,
+                "p": 0.0011233790034369743,
+                "significant": "yes",
+                "result": "mt_recommended faster than MTR-FixedHeap by 8.719%"
+            },
+            "idle NUMA server": {
+                "effect": -7.599,
+                "p": 0.0007764114990637485,
+                "significant": "yes",
+                "result": "mt_recommended faster than MTR-FixedHeap by 7.599%"
+            },
+            "busy NUMA server": {
+                "effect": -7.606,
+                "p": 0.0009350911193154891,
+                "significant": "yes",
+                "result": "mt_recommended faster than MTR-FixedHeap by 7.606%"
+            }
+        },
+        "unmanaged languages": {}
+    },
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 4.892,
+                "p": 0.003783246451258581,
+                "significant": "yes",
+                "result": "D+FixedHeap faster than default by 4.892%"
+            },
+            "busy UMA server": {
+                "effect": 22.71,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "D+FixedHeap faster than default by 22.710%"
+            },
+            "laptop": {
+                "effect": 5.914,
+                "p": 0.005233909190788298,
+                "significant": "yes",
+                "result": "D+FixedHeap faster than default by 5.914%"
+            },
+            "idle NUMA server": {
+                "effect": 7.874,
+                "p": 0.0011233790034369743,
+                "significant": "yes",
+                "result": "D+FixedHeap faster than default by 7.874%"
+            },
+            "busy NUMA server": {
+                "effect": 9.896,
+                "p": 0.006133369443507692,
+                "significant": "yes",
+                "result": "D+FixedHeap faster than default by 9.896%"
+            }
+        },
+        "unmanaged languages": {}
+    }
+}

@@ -1,0 +1,68 @@
+{
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 0.398,
+                "p": 0.07873081119613402,
+                "significant": "no",
+                "result": "D+Pinned-HThreading lower RMAD than default by 0.398 pp"
+            },
+            "busy UMA server": {
+                "effect": 2.473,
+                "p": 0.007169734292803208,
+                "significant": "yes",
+                "result": "D+Pinned-HThreading lower RMAD than default by 2.473 pp"
+            },
+            "laptop": {
+                "effect": 1.559,
+                "p": 0.13372989286451814,
+                "significant": "no",
+                "result": "D+Pinned-HThreading lower RMAD than default by 1.559 pp"
+            },
+            "idle NUMA server": {
+                "effect": 1.365,
+                "p": 0.0032045855456292547,
+                "significant": "yes",
+                "result": "D+Pinned-HThreading lower RMAD than default by 1.365 pp"
+            },
+            "busy NUMA server": {
+                "effect": 5.121,
+                "p": 0.011285575373529618,
+                "significant": "yes",
+                "result": "D+Pinned-HThreading lower RMAD than default by 5.121 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 0.089,
+                "p": 0.24886387493792206,
+                "significant": "no",
+                "result": "D+Pinned-HThreading lower RMAD than default by 0.089 pp"
+            },
+            "busy UMA server": {
+                "effect": 12.853,
+                "p": 0.027991815485665747,
+                "significant": "yes",
+                "result": "D+Pinned-HThreading lower RMAD than default by 12.853 pp"
+            },
+            "laptop": {
+                "effect": 1.241,
+                "p": 0.17629637444051116,
+                "significant": "no",
+                "result": "D+Pinned-HThreading lower RMAD than default by 1.241 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.85,
+                "p": 0.07961580146011343,
+                "significant": "no",
+                "result": "D+Pinned-HThreading lower RMAD than default by 0.850 pp"
+            },
+            "busy NUMA server": {
+                "effect": 6.891,
+                "p": 0.06297905121445523,
+                "significant": "no",
+                "result": "D+Pinned-HThreading lower RMAD than default by 6.891 pp"
+            }
+        }
+    }
+}

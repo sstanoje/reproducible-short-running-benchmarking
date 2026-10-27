@@ -1,0 +1,13 @@
+taskset -c 5 ./akka-uct -r 105 akka-uct
+taskset -c 5 ./finagle-http -r 105 finagle-http
+taskset -c 5 ./fj-kmeans -r 105 fj-kmeans
+taskset -c 5 ./future-genetic -r 105 future-genetic
+taskset -c 5 ./mnemonics -r 105 mnemonics
+taskset -c 5 ./par-mnemonics -r 105 par-mnemonics
+taskset -c 5 ./philosophers -r 105 philosophers
+taskset -c 5 ./reactors -r 105 reactors
+taskset -c 5 ./rx-scrabble -r 105 rx-scrabble
+taskset -c 5 ./scala-doku -r 105 scala-doku
+taskset -c 5 ./scala-kmeans -r 105 scala-kmeans
+taskset -c 5 ./scala-stm-bench7 -r 105 scala-stm-bench7
+taskset -c 5 ./scrabble -r 105 scrabble

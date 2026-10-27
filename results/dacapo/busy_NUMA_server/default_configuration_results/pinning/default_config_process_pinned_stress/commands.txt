@@ -1,0 +1,6 @@
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./fop -Duser.home=/root fop -n 105 -s default --preserve -Djava.home=/root/tools/labsjdk-ee-latest-26+9-jvmci-b01_amd64/
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./luindex -Duser.home=/root luindex -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./lusearch -Duser.home=/root lusearch -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./pmd -Duser.home=/root pmd -n 105 -s default --preserve --no-validation
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./sunflow -Duser.home=/root sunflow -n 105 -s default
+numactl --cpunodebind=0 --membind=0 taskset -c 5 ./xalan -Duser.home=/root xalan -n 105 -s default

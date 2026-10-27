@@ -1,0 +1,6 @@
+taskset -c 5 ./fop -Duser.home=../../helpers/dacapo-home fop -n 105 -s default --preserve -Djava.home=../../helpers/labsjdk-ee-latest-26+9-jvmci-b01_amd64/
+taskset -c 5 ./luindex -Duser.home=../../helpers/dacapo-home luindex -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation
+taskset -c 5 ./lusearch -Duser.home=../../helpers/dacapo-home lusearch -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation
+taskset -c 5 ./pmd -Duser.home=../../helpers/dacapo-home pmd -n 105 -s default --preserve --no-validation
+taskset -c 5 ./sunflow -Duser.home=../../helpers/dacapo-home sunflow -n 105 -s default
+taskset -c 5 ./xalan -Duser.home=../../helpers/dacapo-home xalan -n 105 -s default

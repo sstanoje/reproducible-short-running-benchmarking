@@ -1,0 +1,3 @@
+numactl --cpunodebind=0 --membind=0 nice -n -20 ./lusearch -Duser.home=/root lusearch -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 nice -n -20 ./sunflow -Duser.home=/root sunflow -n 105 -s default -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 nice -n -20 ./xalan -Duser.home=/root xalan -n 105 -s default -Xms16g -Xmx16g -Xmn8g

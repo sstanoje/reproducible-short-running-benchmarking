@@ -1,0 +1,200 @@
+{
+    "recommended vs modified recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 0.005,
+                "p": 0.9587607499379828,
+                "significant": "no",
+                "result": "R+TurboBoost+Powersave/Schedutil lower RMAD than recommended by 0.005 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.069,
+                "p": 0.029873144019229032,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+TurboBoost+Powersave/Schedutil by 0.069 pp"
+            },
+            "laptop": {
+                "effect": -0.086,
+                "p": 0.009725523541639646,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+TurboBoost+Powersave/Schedutil by 0.086 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.248,
+                "p": 0.0016091949935643373,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+TurboBoost+Powersave/Schedutil by 0.248 pp"
+            },
+            "busy NUMA server": {
+                "effect": -1.22,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+TurboBoost+Powersave/Schedutil by 1.220 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": -0.236,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+TurboBoost+Powersave/Schedutil by 0.236 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.112,
+                "p": 0.027707849358079864,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+TurboBoost+Powersave/Schedutil by 0.112 pp"
+            },
+            "laptop": {
+                "effect": -0.183,
+                "p": 0.027991815485665747,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+TurboBoost+Powersave/Schedutil by 0.183 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.0,
+                "p": 0.892738400944348,
+                "significant": "no",
+                "result": "R+TurboBoost+Powersave/Schedutil lower RMAD than recommended by 0.000 pp"
+            },
+            "busy NUMA server": {
+                "effect": -0.752,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+TurboBoost+Powersave/Schedutil by 0.752 pp"
+            }
+        }
+    },
+    "mt_recommended vs modified mt_recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -0.078,
+                "p": 0.32587002429697964,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than MTR+TurboBoost+Powersave/Schedutil by 0.078 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.078,
+                "p": 0.27753025059514513,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than MTR+TurboBoost+Powersave/Schedutil by 0.078 pp"
+            },
+            "laptop": {
+                "effect": -1.936,
+                "p": 0.0013462033496218731,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than MTR+TurboBoost+Powersave/Schedutil by 1.936 pp"
+            },
+            "idle NUMA server": {
+                "effect": -1.694,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than MTR+TurboBoost+Powersave/Schedutil by 1.694 pp"
+            },
+            "busy NUMA server": {
+                "effect": -3.16,
+                "p": 0.007169734292803208,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than MTR+TurboBoost+Powersave/Schedutil by 3.160 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 0.0,
+                "p": 1.0,
+                "significant": "no",
+                "result": "MTR+TurboBoost+Powersave/Schedutil lower RMAD than mt_recommended by 0.000 pp"
+            },
+            "busy UMA server": {
+                "effect": -1.522,
+                "p": 0.3104944343172349,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than MTR+TurboBoost+Powersave/Schedutil by 1.522 pp"
+            },
+            "laptop": {
+                "effect": -0.917,
+                "p": 0.046399461870904594,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than MTR+TurboBoost+Powersave/Schedutil by 0.917 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.0,
+                "p": 0.3454475304692257,
+                "significant": "no",
+                "result": "MTR+TurboBoost+Powersave/Schedutil lower RMAD than mt_recommended by 0.000 pp"
+            },
+            "busy NUMA server": {
+                "effect": -1.052,
+                "p": 0.046399461870904594,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than MTR+TurboBoost+Powersave/Schedutil by 1.052 pp"
+            }
+        }
+    },
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 0.041,
+                "p": 0.23432097173768163,
+                "significant": "no",
+                "result": "D-TurboBoost+Performance lower RMAD than default by 0.041 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.362,
+                "p": 0.3010541816225988,
+                "significant": "no",
+                "result": "default lower RMAD than D-TurboBoost+Performance by 0.362 pp"
+            },
+            "laptop": {
+                "effect": 1.555,
+                "p": 0.009725523541639646,
+                "significant": "yes",
+                "result": "D-TurboBoost+Performance lower RMAD than default by 1.555 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.082,
+                "p": 0.5349252131384397,
+                "significant": "no",
+                "result": "D-TurboBoost+Performance lower RMAD than default by 0.082 pp"
+            },
+            "busy NUMA server": {
+                "effect": 0.166,
+                "p": 0.7173808884143212,
+                "significant": "no",
+                "result": "D-TurboBoost+Performance lower RMAD than default by 0.166 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 0.124,
+                "p": 0.06788915486182899,
+                "significant": "no",
+                "result": "D-TurboBoost+Performance lower RMAD than default by 0.124 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.476,
+                "p": 0.463071015014588,
+                "significant": "no",
+                "result": "default lower RMAD than D-TurboBoost+Performance by 0.476 pp"
+            },
+            "laptop": {
+                "effect": 0.703,
+                "p": 0.49896229860376107,
+                "significant": "no",
+                "result": "D-TurboBoost+Performance lower RMAD than default by 0.703 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.129,
+                "p": 0.043114446783075355,
+                "significant": "yes",
+                "result": "D-TurboBoost+Performance lower RMAD than default by 0.129 pp"
+            },
+            "busy NUMA server": {
+                "effect": -1.561,
+                "p": 0.23672357063785732,
+                "significant": "no",
+                "result": "default lower RMAD than D-TurboBoost+Performance by 1.561 pp"
+            }
+        }
+    }
+}

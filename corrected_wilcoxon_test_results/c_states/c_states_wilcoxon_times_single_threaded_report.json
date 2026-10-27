@@ -1,0 +1,134 @@
+{
+    "recommended vs modified recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 0.005,
+                "p": 0.5939546753269146,
+                "significant": "no",
+                "result": "R+C0-9 faster than recommended by 0.005%"
+            },
+            "busy UMA server": {
+                "effect": 0.0,
+                "p": 0.23672357063785732,
+                "significant": "no",
+                "result": "R+C0-9 faster than recommended by 0.000%"
+            },
+            "idle NUMA server": {
+                "effect": 0.003,
+                "p": 0.21352435403618242,
+                "significant": "no",
+                "result": "R+C0-9 faster than recommended by 0.003%"
+            },
+            "busy NUMA server": {
+                "effect": 0.0,
+                "p": 0.7988593499960496,
+                "significant": "no",
+                "result": "R+C0-9 faster than recommended by 0.000%"
+            },
+            "laptop": {
+                "effect": 0.0,
+                "p": 0.8657723749926214,
+                "significant": "no",
+                "result": "R+C0-9 faster than recommended by 0.000%"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 0.0,
+                "p": 0.866445613400565,
+                "significant": "no",
+                "result": "R+C0-9 faster than recommended by 0.000%"
+            },
+            "busy UMA server": {
+                "effect": -0.023,
+                "p": 0.02182672159602272,
+                "significant": "yes",
+                "result": "recommended faster than R+C0-9 by 0.023%"
+            },
+            "idle NUMA server": {
+                "effect": -0.006,
+                "p": 0.6113514993496755,
+                "significant": "no",
+                "result": "recommended faster than R+C0-9 by 0.006%"
+            },
+            "busy NUMA server": {
+                "effect": 0.002,
+                "p": 0.3811715864506616,
+                "significant": "no",
+                "result": "R+C0-9 faster than recommended by 0.002%"
+            },
+            "laptop": {
+                "effect": -0.082,
+                "p": 0.7188875621362669,
+                "significant": "no",
+                "result": "recommended faster than R+C0-9 by 0.082%"
+            }
+        }
+    },
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 0.351,
+                "p": 0.1306650895957666,
+                "significant": "no",
+                "result": "D+C0 faster than default by 0.351%"
+            },
+            "busy UMA server": {
+                "effect": 0.02,
+                "p": 0.8588630128278887,
+                "significant": "no",
+                "result": "D+C0 faster than default by 0.020%"
+            },
+            "idle NUMA server": {
+                "effect": 0.0,
+                "p": 0.9593536340401635,
+                "significant": "no",
+                "result": "D+C0 faster than default by 0.000%"
+            },
+            "busy NUMA server": {
+                "effect": 0.695,
+                "p": 0.05973901545539241,
+                "significant": "no",
+                "result": "D+C0 faster than default by 0.695%"
+            },
+            "laptop": {
+                "effect": 0.247,
+                "p": 0.9374729223624751,
+                "significant": "no",
+                "result": "D+C0 faster than default by 0.247%"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": -0.665,
+                "p": 0.00016046383716795338,
+                "significant": "yes",
+                "result": "default faster than D+C0 by 0.665%"
+            },
+            "busy UMA server": {
+                "effect": -0.523,
+                "p": 0.0092710251720259,
+                "significant": "yes",
+                "result": "default faster than D+C0 by 0.523%"
+            },
+            "idle NUMA server": {
+                "effect": -0.016,
+                "p": 0.4405215911492053,
+                "significant": "no",
+                "result": "default faster than D+C0 by 0.016%"
+            },
+            "busy NUMA server": {
+                "effect": 0.712,
+                "p": 0.13590778549641166,
+                "significant": "no",
+                "result": "D+C0 faster than default by 0.712%"
+            },
+            "laptop": {
+                "effect": 1.093,
+                "p": 0.023038144695472357,
+                "significant": "yes",
+                "result": "D+C0 faster than default by 1.093%"
+            }
+        }
+    }
+}
