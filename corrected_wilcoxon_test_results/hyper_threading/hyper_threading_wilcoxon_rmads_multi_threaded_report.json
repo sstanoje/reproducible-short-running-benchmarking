@@ -1,0 +1,138 @@
+{
+    "recommended vs modified recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 0.023,
+                "p": 0.43796657516602056,
+                "significant": "no",
+                "result": "R+HThreading lower RMAD than recommended by 0.023 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.962,
+                "p": 0.0013462033496218731,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+HThreading by 0.962 pp"
+            },
+            "laptop": {
+                "effect": 0.0,
+                "p": 0.836138661741041,
+                "significant": "no",
+                "result": "R+HThreading lower RMAD than recommended by 0.000 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.037,
+                "p": 0.1476602555616499,
+                "significant": "no",
+                "result": "recommended lower RMAD than R+HThreading by 0.037 pp"
+            },
+            "busy NUMA server": {
+                "effect": -0.587,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+HThreading by 0.587 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": -0.001,
+                "p": 0.06788915486182899,
+                "significant": "no",
+                "result": "recommended lower RMAD than R+HThreading by 0.001 pp"
+            },
+            "busy UMA server": {
+                "effect": -1.083,
+                "p": 0.011718685599768628,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+HThreading by 1.083 pp"
+            },
+            "laptop": {
+                "effect": 0.0,
+                "p": 0.28504940740261275,
+                "significant": "no",
+                "result": "R+HThreading lower RMAD than recommended by 0.000 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.0,
+                "p": 0.22491588401596185,
+                "significant": "no",
+                "result": "R+HThreading lower RMAD than recommended by 0.000 pp"
+            },
+            "busy NUMA server": {
+                "effect": -1.791,
+                "p": 0.011718685599768628,
+                "significant": "yes",
+                "result": "recommended lower RMAD than R+HThreading by 1.791 pp"
+            }
+        }
+    },
+    "mt_recommended vs modified mt_recommended": {
+        "managed languages": {},
+        "unmanaged languages": {}
+    },
+    "default vs modified default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -0.067,
+                "p": 0.836138661741041,
+                "significant": "no",
+                "result": "default lower RMAD than D-HThreading by 0.067 pp"
+            },
+            "busy UMA server": {
+                "effect": -2.179,
+                "p": 0.004455352355471741,
+                "significant": "yes",
+                "result": "default lower RMAD than D-HThreading by 2.179 pp"
+            },
+            "laptop": {
+                "effect": 0.65,
+                "p": 0.08793560714236243,
+                "significant": "no",
+                "result": "D-HThreading lower RMAD than default by 0.650 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.423,
+                "p": 0.13372989286451814,
+                "significant": "no",
+                "result": "D-HThreading lower RMAD than default by 0.423 pp"
+            },
+            "busy NUMA server": {
+                "effect": -0.048,
+                "p": 0.7173808884143212,
+                "significant": "no",
+                "result": "default lower RMAD than D-HThreading by 0.048 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 0.098,
+                "p": 0.07961580146011343,
+                "significant": "no",
+                "result": "D-HThreading lower RMAD than default by 0.098 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.054,
+                "p": 0.7353166906373405,
+                "significant": "no",
+                "result": "default lower RMAD than D-HThreading by 0.054 pp"
+            },
+            "laptop": {
+                "effect": 0.621,
+                "p": 0.3104944343172349,
+                "significant": "no",
+                "result": "D-HThreading lower RMAD than default by 0.621 pp"
+            },
+            "idle NUMA server": {
+                "effect": 0.0,
+                "p": 0.7531523647659145,
+                "significant": "no",
+                "result": "D-HThreading lower RMAD than default by 0.000 pp"
+            },
+            "busy NUMA server": {
+                "effect": -0.41,
+                "p": 0.32698934959801507,
+                "significant": "no",
+                "result": "default lower RMAD than D-HThreading by 0.410 pp"
+            }
+        }
+    }
+}

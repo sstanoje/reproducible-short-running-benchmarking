@@ -1,0 +1,68 @@
+{
+    "recommended vs default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": 23.182,
+                "p": 0.002217721464237049,
+                "significant": "yes",
+                "result": "default faster than recommended by 23.182%"
+            },
+            "busy UMA server": {
+                "effect": 12.031,
+                "p": 0.05973901545539241,
+                "significant": "no",
+                "result": "default faster than recommended by 12.031%"
+            },
+            "idle NUMA server": {
+                "effect": 25.296,
+                "p": 0.002217721464237049,
+                "significant": "yes",
+                "result": "default faster than recommended by 25.296%"
+            },
+            "busy NUMA server": {
+                "effect": 10.51,
+                "p": 0.07118923429208965,
+                "significant": "no",
+                "result": "default faster than recommended by 10.510%"
+            },
+            "laptop": {
+                "effect": 57.784,
+                "p": 0.002217721464237049,
+                "significant": "yes",
+                "result": "default faster than recommended by 57.784%"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": 25.623,
+                "p": 8.466081690383873e-06,
+                "significant": "yes",
+                "result": "default faster than recommended by 25.623%"
+            },
+            "busy UMA server": {
+                "effect": 16.503,
+                "p": 1.0246327832617613e-05,
+                "significant": "yes",
+                "result": "default faster than recommended by 16.503%"
+            },
+            "idle NUMA server": {
+                "effect": 27.492,
+                "p": 2.3534209951215346e-06,
+                "significant": "yes",
+                "result": "default faster than recommended by 27.492%"
+            },
+            "busy NUMA server": {
+                "effect": 6.396,
+                "p": 0.004681835234144671,
+                "significant": "yes",
+                "result": "default faster than recommended by 6.396%"
+            },
+            "laptop": {
+                "effect": 79.805,
+                "p": 1.7343976283205784e-06,
+                "significant": "yes",
+                "result": "default faster than recommended by 79.805%"
+            }
+        }
+    }
+}

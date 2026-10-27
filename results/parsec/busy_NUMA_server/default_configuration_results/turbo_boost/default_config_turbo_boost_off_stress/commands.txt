@@ -1,0 +1,8 @@
+./blackscholes 32 in_64K.txt prices.txt
+./bodytrack sequenceB_4 4 4 4000 5 0 32
+./facesim -timing -threads 32
+./ferret corel lsh queries 10 20 32 output.txt
+./fluidanimate 32 5 in_300K.fluid out.fluid
+env OMP_NUM_THREADS=32 ./freqmine kosarak_990k.dat 790
+./swaptions -ns 64 -sm 40000 -nt 32
+env IM_CONCURRENCY=32 ./vips im_benchmark bigben_2662x5500.v output.v

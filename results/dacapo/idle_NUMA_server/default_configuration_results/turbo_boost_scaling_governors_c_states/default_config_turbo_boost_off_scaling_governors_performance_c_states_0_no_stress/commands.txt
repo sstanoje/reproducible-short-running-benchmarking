@@ -1,0 +1,6 @@
+./fop -Duser.home=../../helpers/dacapo-home fop -n 105 -s default --preserve -Djava.home=../../helpers/labsjdk-ee-latest-26+9-jvmci-b01_amd64/
+./luindex -Duser.home=../../helpers/dacapo-home luindex -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation
+./lusearch -Duser.home=../../helpers/dacapo-home lusearch -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation
+./pmd -Duser.home=../../helpers/dacapo-home pmd -n 105 -s default --preserve --no-validation
+./sunflow -Duser.home=../../helpers/dacapo-home sunflow -n 105 -s default
+./xalan -Duser.home=../../helpers/dacapo-home xalan -n 105 -s default

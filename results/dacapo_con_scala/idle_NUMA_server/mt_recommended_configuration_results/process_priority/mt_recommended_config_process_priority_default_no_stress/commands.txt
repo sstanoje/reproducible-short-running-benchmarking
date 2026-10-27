@@ -1,0 +1,2 @@
+numactl --cpunodebind=0 --membind=0 ./apparat apparat -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g
+numactl --cpunodebind=0 --membind=0 ./tmt tmt -n 105 -s default --preserve -Xms16g -Xmx16g -Xmn8g

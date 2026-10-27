@@ -1,0 +1,200 @@
+{
+    "recommended vs default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -1.011,
+                "p": 0.0019187660162923678,
+                "significant": "yes",
+                "result": "recommended lower RMAD than default by 1.011 pp"
+            },
+            "busy UMA server": {
+                "effect": -3.178,
+                "p": 0.0005312427827532942,
+                "significant": "yes",
+                "result": "recommended lower RMAD than default by 3.178 pp"
+            },
+            "laptop": {
+                "effect": -2.989,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "recommended lower RMAD than default by 2.989 pp"
+            },
+            "idle NUMA server": {
+                "effect": -1.784,
+                "p": 0.0005312427827532942,
+                "significant": "yes",
+                "result": "recommended lower RMAD than default by 1.784 pp"
+            },
+            "busy NUMA server": {
+                "effect": -6.474,
+                "p": 0.0005312427827532942,
+                "significant": "yes",
+                "result": "recommended lower RMAD than default by 6.474 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": -0.601,
+                "p": 0.046399461870904594,
+                "significant": "yes",
+                "result": "recommended lower RMAD than default by 0.601 pp"
+            },
+            "busy UMA server": {
+                "effect": -14.789,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "recommended lower RMAD than default by 14.789 pp"
+            },
+            "laptop": {
+                "effect": -2.111,
+                "p": 0.027707849358079864,
+                "significant": "yes",
+                "result": "recommended lower RMAD than default by 2.111 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.896,
+                "p": 0.027707849358079864,
+                "significant": "yes",
+                "result": "recommended lower RMAD than default by 0.896 pp"
+            },
+            "busy NUMA server": {
+                "effect": -14.878,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "recommended lower RMAD than default by 14.878 pp"
+            }
+        }
+    },
+    "recommended vs mt_recommended": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -0.546,
+                "p": 0.006133369443507692,
+                "significant": "yes",
+                "result": "recommended lower RMAD than mt_recommended by 0.546 pp"
+            },
+            "busy UMA server": {
+                "effect": -4.274,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "recommended lower RMAD than mt_recommended by 4.274 pp"
+            },
+            "laptop": {
+                "effect": -0.817,
+                "p": 0.0009350911193154891,
+                "significant": "yes",
+                "result": "recommended lower RMAD than mt_recommended by 0.817 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.549,
+                "p": 0.0032045855456292547,
+                "significant": "yes",
+                "result": "recommended lower RMAD than mt_recommended by 0.549 pp"
+            },
+            "busy NUMA server": {
+                "effect": -3.449,
+                "p": 0.00043777719457466354,
+                "significant": "yes",
+                "result": "recommended lower RMAD than mt_recommended by 3.449 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": -0.101,
+                "p": 0.07961580146011343,
+                "significant": "no",
+                "result": "recommended lower RMAD than mt_recommended by 0.101 pp"
+            },
+            "busy UMA server": {
+                "effect": -3.813,
+                "p": 0.011718685599768628,
+                "significant": "yes",
+                "result": "recommended lower RMAD than mt_recommended by 3.813 pp"
+            },
+            "laptop": {
+                "effect": 0.0,
+                "p": 0.22491588401596185,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than recommended by 0.000 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.319,
+                "p": 0.027707849358079864,
+                "significant": "yes",
+                "result": "recommended lower RMAD than mt_recommended by 0.319 pp"
+            },
+            "busy NUMA server": {
+                "effect": -3.382,
+                "p": 0.017960477526078766,
+                "significant": "yes",
+                "result": "recommended lower RMAD than mt_recommended by 3.382 pp"
+            }
+        }
+    },
+    "mt_recommended vs default": {
+        "managed languages": {
+            "idle UMA server": {
+                "effect": -0.152,
+                "p": 0.25529050519961505,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than default by 0.152 pp"
+            },
+            "busy UMA server": {
+                "effect": -0.47,
+                "p": 0.40804420568711997,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than default by 0.470 pp"
+            },
+            "laptop": {
+                "effect": -2.016,
+                "p": 0.002282193441519148,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than default by 2.016 pp"
+            },
+            "idle NUMA server": {
+                "effect": -1.276,
+                "p": 0.004455352355471741,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than default by 1.276 pp"
+            },
+            "busy NUMA server": {
+                "effect": -2.602,
+                "p": 0.029873144019229032,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than default by 2.602 pp"
+            }
+        },
+        "unmanaged languages": {
+            "idle UMA server": {
+                "effect": -0.141,
+                "p": 0.043114446783075355,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than default by 0.141 pp"
+            },
+            "busy UMA server": {
+                "effect": -12.393,
+                "p": 0.02506184434388362,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than default by 12.393 pp"
+            },
+            "laptop": {
+                "effect": -1.708,
+                "p": 0.027707849358079864,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than default by 1.708 pp"
+            },
+            "idle NUMA server": {
+                "effect": -0.2,
+                "p": 0.11585149752593009,
+                "significant": "no",
+                "result": "mt_recommended lower RMAD than default by 0.200 pp"
+            },
+            "busy NUMA server": {
+                "effect": -12.145,
+                "p": 0.027991815485665747,
+                "significant": "yes",
+                "result": "mt_recommended lower RMAD than default by 12.145 pp"
+            }
+        }
+    }
+}

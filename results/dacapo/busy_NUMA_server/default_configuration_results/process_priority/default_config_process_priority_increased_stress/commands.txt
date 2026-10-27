@@ -1,0 +1,6 @@
+nice -n -20 ./fop -Duser.home=/root fop -n 105 -s default --preserve -Djava.home=/root/tools/labsjdk-ee-latest-26+9-jvmci-b01_amd64/
+nice -n -20 ./luindex -Duser.home=/root luindex -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation
+nice -n -20 ./lusearch -Duser.home=/root lusearch -n 105 -s default --preserve -Dorg.apache.lucene.store.MMapDirectory.enableMemorySegments=false --no-validation
+nice -n -20 ./pmd -Duser.home=/root pmd -n 105 -s default --preserve --no-validation
+nice -n -20 ./sunflow -Duser.home=/root sunflow -n 105 -s default
+nice -n -20 ./xalan -Duser.home=/root xalan -n 105 -s default
